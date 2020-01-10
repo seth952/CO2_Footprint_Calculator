@@ -15,6 +15,16 @@ const createRouter = function(collection){
     })
   });
 
+  router.get('/:id', (req, res) => {
+    collection.findOne({_id: ObjectID(req.params.id)})
+    .then(doc => res.json(doc))
+    .catch((err) => {
+      console.error(err);
+      res.status(500);
+      res.json({status: 500, error: err})
+    })
+  });
+
   return router;
 }
 
