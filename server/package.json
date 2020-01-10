@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "cars": "^1.1.6",
+    "cors": "^2.8.5",
     "nodemon": "^2.0.2"
   }
 }
