@@ -31,6 +31,11 @@ const createRouter = function(collection){
     .then(result => res.json(result.ops[0]))
   });
 
+  router.delete('/:id', (req, res) => {
+    collection.deleteOne({_id: ObjectID(req.params.id)})
+    .then(result => res.json(result))
+  });
+
   return router;
 }
 
