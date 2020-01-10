@@ -36,6 +36,15 @@ const createRouter = function(collection){
     .then(result => res.json(result))
   });
 
+  router.put('/:id', (req, res) => {
+    collection.findOneAndUpdate(
+      {_id: ObjectID(req.params.id)},
+      {$set: req.body},
+      {returnOriginal: false}
+    )
+    .then(result => res.json(result.value))
+  })
+
   return router;
 }
 
