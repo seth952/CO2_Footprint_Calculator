@@ -25,6 +25,26 @@ const createRouter = function(collection){
     })
   });
 
+  router.post('/', (req, res) => {
+    const newData = req.body;
+    collection.insertOne(newData)
+    .then(result => res.json(result.ops[0]))
+  });
+
+  router.delete('/:id', (req, res) => {
+    collection.deleteOne({_id: ObjectID(req.params.id)})
+    .then(result => res.json(result))
+  });
+
+  router.put('/:id', (req, res) => {
+    collection.findOneAndUpdate(
+      {_id: ObjectID(req.params.id)},
+      {$set: req.body},
+      {returnOriginal: false}
+    )
+    .then(result => res.json(result.value))
+  })
+
   return router;
 }
 
