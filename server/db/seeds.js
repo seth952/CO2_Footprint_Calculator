@@ -2,7 +2,7 @@ use emissions;
 
 db.dropDatabase()
 
-db.emissions.insertMany([
+db.emissionFactors.insertMany([
   {
   travel: {
       car: "0.6",
@@ -19,14 +19,22 @@ db.emissions.insertMany([
       hybrid: "0.66"
     }
 
+  }
+])
+
+db.userData.insertMany([
+
+  {
+  name: "Paul McManus",
+  travelNumber: 12,
+  dietNumber: 10,
+  energyNumber: 8
   },
   {
-    name: "john",
-    distance: 1
-  },
-  {
-    name: "shrek",
-    distance: 1
+    name: "Shrek Shrekington",
+    travelDistance: 1,
+    dietNumber: 20,
+    energyNumber: 20
   }
 ])
   ;
