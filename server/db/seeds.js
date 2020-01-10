@@ -2,18 +2,30 @@ use emissions;
 
 db.dropDatabase()
 
-db.emissions.insertOne(
+db.emissions.insertMany(
+  [{
+  travel: {
+      car: "0.6",
+      train: "0.3",
+      plane: "1.0"
+    },
+  diet: {
+      meat: "0.5",
+      veg: "0.2"
+    },
+  energy:{
+      electricity: "0.99",
+      gas: "0.33",
+      hybrid: "0.66"
+    },
+  users:
+    {
+      john:{
+        distance: 1
+      },
+      shrek: {
+        distance: 1
+      }
+    }
 
-  {
-    car: "0.6",
-    train: "0.3",
-    plane: "1.0",
-    meat: "0.5",
-    veg: "0.2",
-    electricity: "0.99",
-    gas: "0.33",
-    hybrid: "0.66"
-
-  }
-
-);
+  }]);
