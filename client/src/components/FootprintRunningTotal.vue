@@ -16,11 +16,12 @@ export default {
   name: 'footprint-running-total',
   data(){
     return {
-      travelrunningtotal: null,
-      energyrunningtotal: null,
-      dietrunningtotal: null,
-      combinedrunningtotal: null,
-      emissions: []
+      travelrunningtotal: [],
+      energyrunningtotal: [],
+      dietrunningtotal: [],
+      combinedrunningtotal: [],
+      emissions: [],
+
     }
   },
 
@@ -29,9 +30,14 @@ export default {
     .then(emissions => this.emissions = emissions)
     // UserDataService.getUserData()
     // .then(users => this.users = users)
+
+      eventBus.$on('running-total', (changeFootprint)=> {
+      this.travelrunningtotal.push(changeFootprint)
+    })
+    }
   }
 
-  }
+
 
 </script>
 

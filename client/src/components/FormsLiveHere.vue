@@ -71,12 +71,24 @@ export default {
       veg: this.veg
       }
 
-    UserDataService.post(newFootprint)
-    .then((footprint) => {
-      eventBus.$emit('emission-added', emission);
-      this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg ;
-    });
+    // UserDataService.post(newFootprint)
+    // .then((footprint) => {
+    //   eventBus.$emit('emission-added', emission);
+    //   this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg ;
+    // });
+  },
+
+  handleChange(){
+    const changeFootprint = {
+      car: this.car
+      }
+
+      eventBus.$emit('running-total', changeFootprint);
+
+
   }
+
+
 }
 }
 </script>
