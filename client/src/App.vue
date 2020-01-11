@@ -1,8 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+
+<div class="">
+
+  <template>
+      <div>
+          <ul>
+              <li v-for="index in list" :key="index._id">
+
+                  <button @click="contentVisible === index._id ? contentVisible = false : contentVisible = index._id">{{ index.title }}</button>
+
+                  <p v-if='contentVisible === index._id'>{{ index.item }}</p>
+
+              </li>
+          </ul>
+      </div>
+  </template>
+
+  <script>
+      export default {
+          name: "sameName",
+          data() {
+              return {
+                  contentVisible: false,
+                  list: [
+                      {
+                      _id: id1,
+                      title: title1,
+                      item: item1
+                      },
+                      {
+                      _id: id2,
+                      title: title2,
+                      item: item2
+                      }
+                  ]
+              };
+          },
+      };
+
+</div>
+
+
 </template>
 
 <script>
