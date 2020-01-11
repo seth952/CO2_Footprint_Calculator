@@ -5,7 +5,7 @@
         <h3>Travel</h3>
         <p>Enter miles traveled by:</p>
         <label for="car">Car:</label>
-        <input type="text" name="car" v-model="car">
+        <input type="text" name="car" @change="handleChange" v-model="car">
         <br>
         <label for="train">Train:</label>
         <input type="text" name="train" v-model="train">
