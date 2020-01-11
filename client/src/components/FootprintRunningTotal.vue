@@ -10,6 +10,7 @@
 <script>
 
 import { eventBus } from '../main.js';
+import EmissionFactorsService from '@/services/EmissionFactorsService';
 
 export default {
   name: 'footprint-running-total',
@@ -18,13 +19,20 @@ export default {
       travelrunningtotal: null,
       energyrunningtotal: null,
       dietrunningtotal: null,
-      combinedrunningtotal: null
+      combinedrunningtotal: null,
+      emissions: []
     }
   },
-  computed: {
+
+  mounted() {
+    EmissionFactorsService.getEmissionFactors()
+    .then(emissions => this.emissions = emissions)
+    // UserDataService.getUserData()
+    // .then(users => this.users = users)
+  }
 
   }
-}
+
 </script>
 
 <style lang="css" scoped>
