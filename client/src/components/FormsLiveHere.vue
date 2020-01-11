@@ -71,7 +71,7 @@ export default {
       veg: this.veg
       }
 
-    EmissionFactorsService.post(newFootprint)
+    UserDataService.post(newFootprint)
     .then((footprint) => {
       eventBus.$emit('emission-added', emission);
       this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg ;
