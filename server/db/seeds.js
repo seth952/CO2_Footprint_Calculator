@@ -5,9 +5,9 @@ db.dropDatabase()
 db.emissionFactors.insertMany([
   {
   travel: {
-      car: "0.6",
-      train: "0.3",
-      plane: "1.0"
+      car: "473",
+      train: "34.80",
+      plane: "26900"
     },
   energy:{
       electricity: "0.99",
