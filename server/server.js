@@ -11,11 +11,21 @@ app.use(bodyParser.json());
 MongoClient.connect('mongodb://localhost:27017')
 .then((client) => {
   const db = client.db('emissions');
-  const emissionsCollection = db.collection('emissions');
-  const emissionsRouter = createRouter(emissionsCollection);
-  app.use('/api/emissions', emissionsRouter);
+  const emissionFactorsCollection = db.collection('emissionFactors');
+  const emissionsRouter = createRouter(emissionFactorsCollection);
+  app.use('/api/emissions/emissionFactors', emissionsRouter);
 })
 .catch(console.err)
+
+MongoClient.connect('mongodb://localhost:27017')
+.then((client) => {
+  const db = client.db('emissions');
+  const userDataCollection = db.collection('userData')
+  const emissionsRouter = createRouter(userDataCollection);
+  app.use('/api/emissions/users', emissionsRouter);
+})
+.catch(console.err)
+
 
 app.listen(3000, function(){
   console.log("App running on port 3000");

@@ -1,72 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Learning Vue Like a Boss!</title>
+<template>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+    <p>
+      For a guide and recipes on how to configure / customize this project,<br>
+      check out the
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+    </p>
+    <h3>Installed CLI Plugins</h3>
+    <ul>
+      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
+    </ul>
+    <h3>Essential Links</h3>
+    <ul>
+      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
+      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
+      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
+      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
+    </ul>
+    <h3>Ecosystem</h3>
+    <ul>
+      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
+      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
+      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
+      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
+    </ul>
+  </div>
+</template>
 
-  <!-- css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
-  <style>
-    .message {
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .message-header {
-      cursor: pointer;
-    }
-    .message-body   {
-      padding: 0;
-      max-height: 10em;
-      overflow: hidden;
-      transition: 0.3s ease all;
-    }
-    .is-closed .message-body {
-      max-height: 0;
-    }
-    .message-content {
-      padding: 20px;
-    }
-  </style>
+<script>
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
+  }
+}
+</script>
 
-  <!-- js -->
-  <script src="https://unpkg.com/vue"></script>
-</head>
-<body>
-  <!-- our template -->
-  <section id="app" class="section container">
-
-  <article class="message" :class="accordionClasses">
-    <div class="message-header" @click="toggleAccordion">
-      Hello World
-    </div>
-    <div class="message-body">
-      <div class="message-content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>
-      </div>
-    </div>
-  </article>
-
-  </section>
-
-  <!-- our javascript -->
-  <script>
-    
-      methods: {
-        toggleAccordion: function() {
-          this.isOpen = !this.isOpen;
-        }
-      },
-      computed: {
-        accordionClasses: function() {
-          return {
-            'is-closed': !this.isOpen,
-            'is-primary': this.isOpen,
-            'is-dark': !this.isOpen
-          };
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>
