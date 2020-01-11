@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-<h1>Grant,Paul and Stephen CO2 tracker</h1>
-<footprint-running-total/>
-<forms-live-here/>
+    <h1>Grant,Paul and Stephen CO2 tracker</h1>
+    <footprint-running-total/>
+    <forms-live-here/>
   </div>
 </template>
 <script>
