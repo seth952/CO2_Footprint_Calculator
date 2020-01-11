@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/emissions/users'
+const baseURL = 'http://localhost:3000/api/emissions/emissionFactors'
 
 export default{
   getEmissionFactors(){
