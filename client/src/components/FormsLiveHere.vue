@@ -42,7 +42,7 @@
   </div>
 </template>
 <script>
-import FootprintService from '@/services/FootprintService.js';
+import EmissionFactorsService from '@/services/EmissionFactorsService.js';
 import { eventBus } from '../main.js';
 export default {
   name: "forms-live-here",
@@ -71,7 +71,7 @@ export default {
       veg: this.veg
       }
 
-    FootprintService.post(newFootprint)
+    EmissionFactorsService.post(newFootprint)
     .then((footprint) => {
       eventBus.$emit('emission-added', emission);
       this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg ;
