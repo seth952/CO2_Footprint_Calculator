@@ -3,18 +3,21 @@
     <h1>Grant,Paul and Stephen CO2 tracker</h1>
     <footprint-running-total/>
     <forms-live-here/>
+    <result/>
   </div>
 </template>
 <script>
 import FootprintRunningTotal from '@/components/FootprintRunningTotal';
 import FormsLiveHere from '@/components/FormsLiveHere';
+import Result from '@/components/Result';
 import {eventBus} from '@/main.js'
 
 export default {
   name: "app",
   components: {
     'footprint-running-total': FootprintRunningTotal,
-    'forms-live-here': FormsLiveHere
+    'forms-live-here': FormsLiveHere,
+    'result': Result
   },
   mounted(){
     const runningFootprint = {
