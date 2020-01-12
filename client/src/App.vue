@@ -8,11 +8,21 @@
 <script>
 import FootprintRunningTotal from '@/components/FootprintRunningTotal';
 import FormsLiveHere from '@/components/FormsLiveHere';
+import {eventBus} from '@/main.js'
+
 export default {
   name: "app",
   components: {
     'footprint-running-total': FootprintRunningTotal,
     'forms-live-here': FormsLiveHere
+  },
+  mounted(){
+    const runningFootprint = {
+      car: this.car,
+      train: this.train,
+      plane: this.plane
+        }
+      eventBus.$emit('running-total-travel', runningFootprint)
   }
 }
 </script>

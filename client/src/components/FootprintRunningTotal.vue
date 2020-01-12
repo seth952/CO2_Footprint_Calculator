@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="running-total-container">
-      <h3 id="travelrunningtotal">Travel Total: </h3>
-      <h3 id="energyrunningtotal">Energy Total:</h3>
-      <h3 id="dietrunningtotal">Diet Total:</h3>
-      <h2 id="combinedrunningtotal">Combined Running Total:</h2>
+      <travel-running-total  :emissionsProp="emissions" :travelProp="travelrunningtotal"></travel-running-total>
+      <energy-running-total :emissionsProp="emissions" :energyProp="energyrunningtotal"/>
+      <diet-running-total :emissionsProp="emissions" :dietProp="dietrunningtotal"/>
+      <combined-running-total />
     </div>
 </template>
 
@@ -11,6 +11,9 @@
 
 import { eventBus } from '../main.js';
 import EmissionFactorsService from '@/services/EmissionFactorsService';
+import TravelRunningTotal from './TravelRunningTotal.vue'
+import EnergyRunningTotal from './EnergyRunningTotal.vue'
+import DietRunningTotal from './DietRunningTotal.vue'
 
 
 export default {
@@ -18,38 +21,46 @@ export default {
   data(){
     return {
       travelrunningtotal: null,
-      travelactualrunningtotal: null,
       energyrunningtotal: null,
       dietrunningtotal: null,
-      emissions: [],
-
+      emissions: []
     }
   },
-  computed: {
-    travelRunningTotal(){
+  components:{
+    'travel-running-total': TravelRunningTotal,
+    'energy-running-total': EnergyRunningTotal,
+    'diet-running-total': DietRunningTotal
+    },
 
-      let travelArray = []
-      travelArray.push(this.travelrunningtotal.car * this.emissions[0].travel.car)
-      travelArray.push(this.travelrunningtotal.train * this.emissions[0].travel.train)
-      travelArray.push(this.travelrunningtotal.plane * this.emissions[0].travel.plane)
+  methods:{
+    // getArray(){
+    // let travelArray = []
+    // this.travelArray.push(this.travelrunningtotal.car * this.emissions[0].travel.car)
+    // this.travelArray.push(this.travelrunningtotal.train * this.emissions[0].travel.train)
+    // this.travelArray.push(this.travelrunningtotal.plane * this.emissions[0].travel.plane)
+},
+// sumTravel(someArray){
+//   return someArray.reduce((total, travel) => {
+//       return total + travel
+//   }, 0)
+//
+// }
 
-      const sumTravel = function(someArray){
-        return someArray.reduce((total, travel) => {
-            return total + travel
-        }, 0)
-
-      }
-      return this.travelactualrunningtotal = sumTravel(travelArray)
-    }
-  },
   mounted() {
+
     EmissionFactorsService.getEmissionFactors()
     .then(emissions => this.emissions = emissions)
+
+    // .then(eventBus.$on('running-total-travel', (changeFootprint)=> {
+    // this.travelrunningtotal = changeFootprint
+    // }))
+    // .then(this.testRunningTotal)
     // UserDataService.getUserData()
     // .then(users => this.users = users)
 
-      eventBus.$on('running-total-travel', (changeFootprint)=> {
-      this.travelrunningtotal = changeFootprint
+
+    eventBus.$on('running-total-travel', (changeFootprint)=> {
+    this.travelrunningtotal = changeFootprint
     })
       eventBus.$on('running-total-energy', (changeFootprint)=> {
       this.energyrunningtotal = changeFootprint
@@ -57,6 +68,11 @@ export default {
       eventBus.$on('running-total-diet', (changeFootprint)=> {
       this.dietrunningtotal = changeFootprint
     })
+
+
+
+
+
     }
   }
 

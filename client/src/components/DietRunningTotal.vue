@@ -1,0 +1,29 @@
+<template lang="html">
+    <div class="">
+      <p>{{dietProp}}</p>
+      <p>Diet total: {{dietTotal}}</p>
+    </div>
+</template>
+
+<script>
+export default {
+  props: ['emissionsProp', 'dietProp'],
+  computed:{
+    dietTotal(){
+      let dietArray =[]
+      dietArray.push(this.dietProp.meat * this.emissionsProp[0].diet.meat)
+      dietArray.push(this.dietProp.veg * this.emissionsProp[0].diet.veg)
+
+      const sumDiet = function(someArray){
+        return someArray.reduce((total, diet) => {
+            return total + diet
+        }, 0)
+    }
+    return sumDiet(dietArray)
+    }
+  }
+}
+</script>
+
+<style lang="css" scoped>
+</style>
