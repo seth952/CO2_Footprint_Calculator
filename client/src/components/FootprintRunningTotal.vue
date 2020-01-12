@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="running-total-container">
       <travel-running-total  :emissionsProp="emissions" :travelProp="travelrunningtotal"></travel-running-total>
-      <h3 id="energyrunningtotal">Energy Total:</h3>
-      <h3 id="dietrunningtotal">Diet Total:</h3>
-      <h2 id="combinedrunningtotal">Combined Running Total:</h2>
+      <energy-running-total :emissionsProp="emissions" :energyProp="energyrunningtotal"/>
+      <diet-running-total :emissionsProp="emissions" :dietProp="dietrunningtotal"/>
+      <combined-running-total />
     </div>
 </template>
 
@@ -12,6 +12,8 @@
 import { eventBus } from '../main.js';
 import EmissionFactorsService from '@/services/EmissionFactorsService';
 import TravelRunningTotal from './TravelRunningTotal.vue'
+import EnergyRunningTotal from './EnergyRunningTotal.vue'
+import DietRunningTotal from './DietRunningTotal.vue'
 
 export default {
   name: 'footprint-running-total',
@@ -24,8 +26,10 @@ export default {
     }
   },
   components:{
-    'travel-running-total': TravelRunningTotal
-  },
+    'travel-running-total': TravelRunningTotal,
+    'energy-running-total': EnergyRunningTotal,
+    'diet-running-total': DietRunningTotal
+    },
 
   methods:{
     // getArray(){
