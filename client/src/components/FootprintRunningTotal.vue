@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="running-total-container">
-      <travel-running-total v-if="travelrunningtotal" :emissionsProp="emissions" :travelProp="travelrunningtotal"/>
+      <travel-running-total  :emissionsProp="emissions" :travelProp="travelrunningtotal"></travel-running-total>
       <h3 id="energyrunningtotal">Energy Total:</h3>
       <h3 id="dietrunningtotal">Diet Total:</h3>
       <h2 id="combinedrunningtotal">Combined Running Total:</h2>
@@ -18,7 +18,6 @@ export default {
   data(){
     return {
       travelrunningtotal: null,
-      travelactualrunningtotal: null,
       energyrunningtotal: null,
       dietrunningtotal: null,
       emissions: []
@@ -64,7 +63,7 @@ export default {
       eventBus.$on('running-total-diet', (changeFootprint)=> {
       this.dietrunningtotal = changeFootprint
     })
-    
+
 
 
 

@@ -1,8 +1,7 @@
 <template lang="html">
 
   <div class="">
-    <p>{{travelProp}}</p>
-    <p>{{test}}</p>
+    <p>Travel Total: {{test}}</p>
   </div>
 </template>
 
@@ -11,7 +10,7 @@ export default {
   props: ['emissionsProp', 'travelProp'],
   data(){
     return {
-      please: null
+
     }
   },
 computed: {
@@ -26,8 +25,12 @@ computed: {
         return total + travel
     }, 0)
 }
-return this.please = sumTravel(travelArray)
+return sumTravel(travelArray)
 }
+
+},
+mounted(){
+
 }
 }
 </script>
