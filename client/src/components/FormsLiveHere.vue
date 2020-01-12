@@ -5,34 +5,34 @@
         <h3>Travel</h3>
         <p>Enter miles traveled by:</p>
         <label for="car">Car:</label>
-        <input type="text" name="car" @input="handleRunningTravel" v-model="car">
+        <input type="number" name="car" @input="handleRunningTravel" v-model="car">
         <br>
         <label for="train">Train:</label>
-        <input type="text" name="train" @input="handleRunningTravel" v-model="train">
+        <input type="number" name="train" @input="handleRunningTravel" v-model="train">
         <br>
         <label for="plane">Plane:</label>
-        <input type="text" name="plane" @input="handleRunningTravel" v-model="plane">
+        <input type="number" name="plane" @input="handleRunningTravel" v-model="plane">
       </div>
       <div id="energy-form">
         <h3>Energy</h3>
         <p>Enter kilowatts used:</p>
         <label for="electricity">Electricity:</label>
-        <input type="text" name="electricity" @input="handleRunningEnergy" v-model="electricity">
+        <input type="number" name="electricity" @input="handleRunningEnergy" v-model="electricity">
         <br>
         <label for="gas">Gas:</label>
-        <input type="text" name="gas" @input="handleRunningEnergy" v-model="gas">
+        <input type="number" name="gas" @input="handleRunningEnergy" v-model="gas">
         <br>
         <label for="hybrid">Hybrid:</label>
-        <input type="text" name="hybrid" @input="handleRunningEnergy" v-model="hybrid">
+        <input type="number" name="hybrid" @input="handleRunningEnergy" v-model="hybrid">
       </div>
       <div id="diet-form">
         <h3>Diet</h3>
         <p>Enter kg eaten in:</p>
         <label for="meat">Meat:</label>
-        <input type="text" name="meat" @input="handleRunningDiet" v-model="meat">
+        <input type="number" name="meat" @input="handleRunningDiet" v-model="meat">
         <br>
         <label for="veg">Veg:</label>
-        <input type="text" name="veg" @input="handleRunningDiet" v-model="veg">
+        <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
       </div>
     </form>
     <br>
@@ -48,16 +48,24 @@ export default {
   name: "forms-live-here",
   data(){
     return{
-      car: '',
-      train: '',
-      plane: '',
-      electricity: '',
+      car: '0',
+      train: '0',
+      plane: '0',
+      electricity: '0',
       gas: '',
       hybrid: '',
       meat: '',
       veg: ''
     }
   },
+  // mounted(){
+  //     const runningFootprint = {
+  //       car: this.car,
+  //       train: this.train,
+  //       plane: this.plane
+  //         }
+  //       eventBus.$emit('running-total-travel', runningFootprint)
+  //   },
   methods: {
   handleSubmit(){
     const newFootprint = {
