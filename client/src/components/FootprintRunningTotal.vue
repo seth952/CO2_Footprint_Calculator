@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="running-total-container">
-      <h3 id="travelrunningtotal" v-if="travelRunningTotal != null">Travel Total: {{travelRunningTotal}}</h3>
+      <h3 id="travelrunningtotal">Travel Total: </h3>
       <h3 id="energyrunningtotal">Energy Total:</h3>
       <h3 id="dietrunningtotal">Diet Total:</h3>
       <h2 id="combinedrunningtotal">Combined Running Total:</h2>
@@ -11,6 +11,7 @@
 
 import { eventBus } from '../main.js';
 import EmissionFactorsService from '@/services/EmissionFactorsService';
+
 
 export default {
   name: 'footprint-running-total',
