@@ -3,6 +3,7 @@
     <h1>Grant,Paul and Stephen CO2 tracker</h1>
     <footprint-running-total/>
     <forms-live-here/>
+    <result/>
   </div>
 </template>
 <script>
