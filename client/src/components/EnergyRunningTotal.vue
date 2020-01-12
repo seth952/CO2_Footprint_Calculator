@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
-    <p>{{energyProp}}</p>
-    <p>Energy total: {{energyTotal}}</p>
+    <p>{{energyProp.to_s}}</p>
+    <h3>Energy total: {{energyTotal}}</h3>
   </div>
 </template>
 

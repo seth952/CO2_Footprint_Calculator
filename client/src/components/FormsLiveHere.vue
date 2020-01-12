@@ -48,10 +48,10 @@ export default {
   name: "forms-live-here",
   data(){
     return{
-      car: '0',
-      train: '0',
-      plane: '0',
-      electricity: '0',
+      car: '',
+      train: '',
+      plane: '',
+      electricity: '',
       gas: '',
       hybrid: '',
       meat: '',
@@ -92,6 +92,7 @@ export default {
       train: this.train,
       plane: this.plane
         }
+        
       eventBus.$emit('running-total-travel', runningFootprint)
   },
   handleRunningEnergy(){

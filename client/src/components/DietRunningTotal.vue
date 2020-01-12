@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="">
-      <p>{{dietProp}}</p>
-      <p>Diet total: {{dietTotal}}</p>
+      <p>{{dietProp.to_s}}</p>
+      <h3>Diet total: {{dietTotal}}</h3>
     </div>
 </template>
 
