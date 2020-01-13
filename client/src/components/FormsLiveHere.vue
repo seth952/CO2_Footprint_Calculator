@@ -78,6 +78,11 @@ export default {
       meat: this.meat,
       veg: this.veg
       }
+      EmissionFactorsService.post(newEmission)
+      .then((emission) => {
+        eventBus.$emit('emission-added', booking);
+        this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg;
+      });
 
     // UserDataService.post(newFootprint)
     // .then((footprint) => {
@@ -92,7 +97,7 @@ export default {
       train: this.train,
       plane: this.plane
         }
-        
+
       eventBus.$emit('running-total-travel', runningFootprint)
   },
   handleRunningEnergy(){
@@ -116,5 +121,21 @@ export default {
 }
 }
 </script>
-<style lang="scss" scoped>
+
+<style lang="css" scoped>
+h2 {
+	margin: 10px 0;
+	padding: 0;
+}
+form {
+	width: 75%;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.7);
+	padding: 20px;
+	margin-bottom: 40px;
+}
+label {
+	min-width: 100px;
+	display: inline-block;
+}
 </style>
