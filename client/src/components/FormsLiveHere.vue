@@ -2,6 +2,8 @@
   <div class="forms" >
     <form class="" action="index.html" method="post" v-on:submit="handleSubmit">
       <div id="travel-form">
+        <label for="name">Name:</label>
+        <input type="text" name="name" v-model="name">
         <h3>Travel</h3>
         <p>Enter miles traveled by:</p>
         <label for="car">Car:</label>
@@ -35,9 +37,11 @@
         <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
       </div>
       <!-- <input type="submit" name="Submit"/> -->
+      <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
+
     </form>
     <br>
-    <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
+    <!-- <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button> -->
 
 
   </div>
@@ -50,6 +54,7 @@ export default {
   name: "forms-live-here",
   data(){
     return{
+      name: '',
       car: '',
       train: '',
       plane: '',
@@ -72,6 +77,7 @@ export default {
   handleSubmit(e){
     e.preventDefault()
     const newFootprint = {
+      name: this.name,
       car: this.car,
       train: this.train,
       plane: this.plane,

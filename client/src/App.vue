@@ -26,12 +26,12 @@ export default {
     'result': Result
   },
   mounted(){
-    
 
-      this.getUserData()
-        eventBus.$on('emission-added', (emission) => {
-          this.emission.push(emission)
-        });
+
+      // this.getUserData()
+      //   eventBus.$on('emission-added', (emission) => {
+      //     this.emission.push(emission)
+      //   });
   }
 }
 </script>
