@@ -50,14 +50,28 @@ export default {
 
     tooltip: {
         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of bananas<br/>'
     },
 
     series: [
         {
             name: "Foot",
             colorByPoint: true,
-            data: [{name: 'hello', y: 5}]
+            data: [
+                {
+                    name: "Travel",
+                    y: 62.74,
+                    drilldown: "Chrome"
+                },
+                {
+                  name: "Energy",
+                  y: 25
+                },
+                {
+                  name: "Diet",
+                  y:100
+                }
+            ]
         }
     ],
     drilldown: {
