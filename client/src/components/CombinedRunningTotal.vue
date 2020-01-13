@@ -27,7 +27,11 @@ export default {
   },
   computed:{
     combinedTotal(){
-      return this.dietTotal + this.energyTotal + this.travelTotal
+      let resultCombined = this.dietTotal + this.energyTotal + this.travelTotal
+
+
+      eventBus.$emit('combined-calculated', resultCombined)
+      return resultCombined
     }
   }
 }

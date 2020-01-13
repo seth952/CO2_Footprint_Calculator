@@ -62,30 +62,39 @@ export default {
       gas: null,
       hybrid: null,
       meat: null,
-      veg: null
+      veg: null,
+      travelTotal: null,
+      energyTotal: null,
+      dietTotal: null,
+      combinedTotal: null
     }
   },
-  // mounted(){
-  //     const runningFootprint = {
-  //       car: this.car,
-  //       train: this.train,
-  //       plane: this.plane
-  //         }
-  //       eventBus.$emit('running-total-travel', runningFootprint)
-  //   },
+  mounted(){
+
+    eventBus.$on('travel-calculated', result => this.travelTotal = result)
+    eventBus.$on('energy-calculated', result => this.energyTotal = result)
+    eventBus.$on('diet-calculated', result => this.dietTotal = result)
+    eventBus.$on('combined-calculated', result => this.combinedTotal = result)
+
+
+    },
   methods: {
   handleSubmit(e){
     e.preventDefault()
     const newFootprint = {
       name: this.name,
-      car: this.car,
-      train: this.train,
-      plane: this.plane,
-      electricity: this.electricity,
-      gas: this.gas,
-      hybrid: this.hybrid,
-      meat: this.meat,
-      veg: this.veg
+      car: this.car * 473,
+      train: this.train * 34.80,
+      plane: this.plane * 26900,
+      electricity: this.electricity * 700,
+      gas: this.gas * 500,
+      hybrid: this.hybrid * 600,
+      meat: this.meat * 19690,
+      veg: this.veg * 5000,
+      travelTotal: this.travelTotal,
+      energyTotal: this.energyTotal,
+      dietTotal: this.dietTotal,
+      combinedTotal: this.combinedTotal
       }
 
       UserDataService.postFootprint(newFootprint)

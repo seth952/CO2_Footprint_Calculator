@@ -3,7 +3,7 @@
       <travel-running-total  :emissionsProp="emissions" :travelProp="travelRunningTotal"/>
       <energy-running-total :emissionsProp="emissions" :energyProp="energyRunningTotal"/>
       <diet-running-total :emissionsProp="emissions" :dietProp="dietRunningTotal"/>
-      <combined-running-total :combinedProp="combinedRunningTotal"/>
+      <combined-running-total />
     </div>
 </template>
 
@@ -45,6 +45,7 @@ export default {
 
     eventBus.$on('running-total-travel', (changeFootprint)=> {
     this.travelRunningTotal = changeFootprint
+
     })
     eventBus.$on('running-total-energy', (changeFootprint)=> {
     this.energyRunningTotal = changeFootprint
@@ -52,9 +53,10 @@ export default {
     eventBus.$on('running-total-diet', (changeFootprint)=> {
     this.dietRunningTotal = changeFootprint
     })
-    // eventBus.$on('combined-running-total', (changeFootprint)=> {
-    // this.combinedRunningTotal = changeFootprint
-    // })
+
+
+  
+
   }
 }
 
