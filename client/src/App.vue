@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import EmissionFactorsService from '@/services/EmissionFactorsService.js';
+import EmissionFactorsService from '@/services/UserDataService.js';
 import FootprintRunningTotal from '@/components/FootprintRunningTotal';
 import FormsLiveHere from '@/components/FormsLiveHere';
 import {eventBus} from '@/main.js'
@@ -30,7 +30,7 @@ export default {
         }
       eventBus.$emit('running-total-travel', runningFootprint)
 
-      this.getEmissionFactors()
+      this.getUserData()
         eventBus.$on('emission-added', (emission) => {
           this.emission.push(emission)
         });
@@ -45,6 +45,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   
+
 }
 
 .heading {

@@ -36,7 +36,7 @@
       </div>
     </form>
     <br>
-    <button type="button" name="Submit">Submit</button>
+    <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
 
 
   </div>
@@ -78,7 +78,7 @@ export default {
       meat: this.meat,
       veg: this.veg
       }
-      EmissionFactorsService.post(newEmission)
+      UserDataService.post(newEmission)
       .then((emission) => {
         eventBus.$emit('emission-added', booking);
         this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg;
