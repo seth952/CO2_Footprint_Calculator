@@ -7,6 +7,7 @@
   </div>
 </template>
 <script>
+import CombinedRunningTotal from '@/components/CombinedRunningTotal';
 import EmissionFactorsService from '@/services/UserDataService.js';
 import FootprintRunningTotal from '@/components/FootprintRunningTotal';
 import FormsLiveHere from '@/components/FormsLiveHere';
@@ -17,7 +18,7 @@ export default {
   name: "app",
   data() {
     return {
-      
+
     }
   },
   components: {

@@ -1,11 +1,12 @@
 <template lang="html">
     <div v-if="emissionsProp && dietProp" class="">
-      <p>{{dietProp.to_s}}</p>
       <h3>Diet Total: {{dietTotal}}</h3>
     </div>
 </template>
 
 <script>
+import {eventBus} from "@/main.js"
+
 export default {
   props: ['emissionsProp', 'dietProp'],
   computed:{
@@ -18,7 +19,8 @@ export default {
         return someArray.reduce((total, diet) => {
             return total + diet
         }, 0)
-    }
+      }
+    eventBus.$emit('diet-calculated', sumDiet(dietArray))
     return sumDiet(dietArray)
     }
   }
