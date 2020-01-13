@@ -26,12 +26,7 @@ export default {
     'result': Result
   },
   mounted(){
-    const runningFootprint = {
-      car: this.car,
-      train: this.train,
-      plane: this.plane
-        }
-      eventBus.$emit('running-total-travel', runningFootprint)
+    
 
       this.getUserData()
         eventBus.$on('emission-added', (emission) => {
@@ -47,7 +42,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  
+
 
 }
 

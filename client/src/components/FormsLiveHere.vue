@@ -34,14 +34,10 @@
         <label for="veg">Veg:</label>
         <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
       </div>
-      <input type="submit" name="Submit"/>
+      <!-- <input type="submit" name="Submit"/> -->
     </form>
     <br>
-<<<<<<< HEAD
     <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
-=======
-
->>>>>>> develop
 
 
   </div>
@@ -85,16 +81,10 @@ export default {
       meat: this.meat,
       veg: this.veg
       }
-<<<<<<< HEAD
-      UserDataService.post(newEmission)
-      .then((emission) => {
-        eventBus.$emit('emission-added', booking);
-        this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg;
-      });
-=======
+
       UserDataService.postFootprint(newFootprint)
       .then(res => eventBus.$emit('footprint-added', res))
->>>>>>> develop
+
 
     // UserDataService.post(newFootprint)
     // .then((footprint) => {
@@ -109,7 +99,6 @@ export default {
       train: this.train,
       plane: this.plane
         }
-
       eventBus.$emit('running-total-travel', runningFootprint)
   },
   handleRunningEnergy(){

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="running-total-container">
+  <div  class="running-total-container">
       <travel-running-total  :emissionsProp="emissions" :travelProp="travelrunningtotal"></travel-running-total>
       <energy-running-total :emissionsProp="emissions" :energyProp="energyrunningtotal"/>
       <diet-running-total :emissionsProp="emissions" :dietProp="dietrunningtotal"/>

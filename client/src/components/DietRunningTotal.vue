@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="">
+    <div v-if="emissionsProp && dietProp" class="">
       <p>{{dietProp.to_s}}</p>
       <h3>Diet Total: {{dietTotal}}</h3>
     </div>

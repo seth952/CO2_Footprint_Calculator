@@ -1,8 +1,8 @@
 <template lang="html">
 
-  <div class="travelProp">
+  <div v-if="emissionsProp && travelProp" class="travelProp">
     <p>{{travelProp.to_s}}</p>
-    <h3>Travel Total: {{test}}</h3>
+    <h3>Travel Total: {{travelTotal}}</h3>
   </div>
 </template>
 
@@ -10,14 +10,10 @@
 export default {
   name: 'travel-running-total',
   props: ['emissionsProp', 'travelProp'],
-  data(){
-    return {
-
-    }
-  },
 computed: {
-  test(){
+  travelTotal(){
     let travelArray = []
+    console.log(this.travelProp.car);
     travelArray.push(this.travelProp.car * this.emissionsProp[0].travel.car)
     travelArray.push(this.travelProp.train * this.emissionsProp[0].travel.train)
     travelArray.push(this.travelProp.plane * this.emissionsProp[0].travel.plane)
