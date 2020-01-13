@@ -13,7 +13,6 @@ export default {
 computed: {
   travelTotal(){
     let travelArray = []
-    console.log(this.travelProp.car);
     travelArray.push(this.travelProp.car * this.emissionsProp[0].travel.car)
     travelArray.push(this.travelProp.train * this.emissionsProp[0].travel.train)
     travelArray.push(this.travelProp.plane * this.emissionsProp[0].travel.plane)
