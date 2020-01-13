@@ -3,7 +3,7 @@
     <h1>CO/2/BY/U</h1>
     <footprint-running-total/>
     <forms-live-here/>
-    <result/>
+    <result />
   </div>
 </template>
 <script>
