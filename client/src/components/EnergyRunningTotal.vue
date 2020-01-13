@@ -1,11 +1,12 @@
 <template lang="html">
   <div  v-if="emissionsProp && energyProp" class="">
-    <p>{{energyProp.to_s}}</p>
     <h3>Energy Total: {{energyTotal}}</h3>
   </div>
 </template>
 
 <script>
+import {eventBus} from "@/main.js"
+
 export default {
   props: ['emissionsProp', 'energyProp'],
   computed:{
@@ -15,13 +16,13 @@ export default {
       energyArray.push(this.energyProp.gas * this.emissionsProp[0].energy.gas)
       energyArray.push(this.energyProp.hybrid * this.emissionsProp[0].energy.hybrid)
 
-    const sumTravel = function(someArray){
+    const sumEnergy = function(someArray){
       return someArray.reduce((total, energy) => {
           return total + energy
       }, 0)
-  }
-  return sumTravel(energyArray)
-
+    }
+  eventBus.$emit('energy-calculated', sumEnergy(energyArray))
+  return sumEnergy(energyArray)
     }
   }
 }

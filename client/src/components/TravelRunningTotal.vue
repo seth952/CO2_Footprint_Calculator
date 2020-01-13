@@ -1,12 +1,13 @@
 <template lang="html">
 
   <div v-if="emissionsProp && travelProp" class="travelProp">
-    <p>{{travelProp.to_s}}</p>
     <h3>Travel Total: {{travelTotal}}</h3>
   </div>
 </template>
 
 <script>
+import {eventBus} from "@/main.js"
+
 export default {
   name: 'travel-running-total',
   props: ['emissionsProp', 'travelProp'],
@@ -22,7 +23,8 @@ computed: {
         return total + travel
     }, 0)
   }
-return sumTravel(travelArray)
+  eventBus.$emit('travel-calculated', sumTravel(travelArray))
+  return sumTravel(travelArray)
 }
 
 }
