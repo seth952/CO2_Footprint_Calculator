@@ -54,15 +54,15 @@ export default {
   name: "forms-live-here",
   data(){
     return{
-      name: '',
-      car: '',
-      train: '',
-      plane: '',
-      electricity: '',
-      gas: '',
-      hybrid: '',
-      meat: '',
-      veg: ''
+      name: null,
+      car: null,
+      train: null,
+      plane: null,
+      electricity: null,
+      gas: null,
+      hybrid: null,
+      meat: null,
+      veg: null
     }
   },
   // mounted(){
