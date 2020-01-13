@@ -3,7 +3,6 @@
       <travel-running-total  :emissionsProp="emissions" :travelProp="travelrunningtotal"></travel-running-total>
       <energy-running-total :emissionsProp="emissions" :energyProp="energyrunningtotal"/>
       <diet-running-total :emissionsProp="emissions" :dietProp="dietrunningtotal"/>
-      <combined-running-total />
     </div>
 </template>
 

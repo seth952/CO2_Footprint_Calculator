@@ -1,6 +1,6 @@
 <template>
-  <div class="forms" v-on:submit.prevent="handleSubmit">
-    <form class="" action="index.html" method="post">
+  <div class="forms" >
+    <form class="" action="index.html" method="post" v-on:submit="handleSubmit">
       <div id="travel-form">
         <h3>Travel</h3>
         <p>Enter miles traveled by:</p>
@@ -34,15 +34,21 @@
         <label for="veg">Veg:</label>
         <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
       </div>
+      <input type="submit" name="Submit"/>
     </form>
     <br>
+<<<<<<< HEAD
     <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
+=======
+
+>>>>>>> develop
 
 
   </div>
 </template>
 <script>
 import EmissionFactorsService from '@/services/EmissionFactorsService.js';
+import UserDataService from '@/services/UserDataService.js'
 import { eventBus } from '../main.js';
 export default {
   name: "forms-live-here",
@@ -67,7 +73,8 @@ export default {
   //       eventBus.$emit('running-total-travel', runningFootprint)
   //   },
   methods: {
-  handleSubmit(){
+  handleSubmit(e){
+    e.preventDefault()
     const newFootprint = {
       car: this.car,
       train: this.train,
@@ -78,11 +85,16 @@ export default {
       meat: this.meat,
       veg: this.veg
       }
+<<<<<<< HEAD
       UserDataService.post(newEmission)
       .then((emission) => {
         eventBus.$emit('emission-added', booking);
         this.car = this.train = this.plane = this.electricity = this.gas = this.hybrid = this.meat = this.veg;
       });
+=======
+      UserDataService.postFootprint(newFootprint)
+      .then(res => eventBus.$emit('footprint-added', res))
+>>>>>>> develop
 
     // UserDataService.post(newFootprint)
     // .then((footprint) => {

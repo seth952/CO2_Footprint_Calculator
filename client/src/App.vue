@@ -3,12 +3,14 @@
     <h1>CO/2/BY/U</h1>
     <footprint-running-total/>
     <forms-live-here/>
+    <result/>
   </div>
 </template>
 <script>
 import EmissionFactorsService from '@/services/UserDataService.js';
 import FootprintRunningTotal from '@/components/FootprintRunningTotal';
 import FormsLiveHere from '@/components/FormsLiveHere';
+import Result from '@/components/Result';
 import {eventBus} from '@/main.js'
 
 export default {
@@ -20,7 +22,8 @@ export default {
   },
   components: {
     'footprint-running-total': FootprintRunningTotal,
-    'forms-live-here': FormsLiveHere
+    'forms-live-here': FormsLiveHere,
+    'result': Result
   },
   mounted(){
     const runningFootprint = {
