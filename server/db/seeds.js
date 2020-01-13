@@ -24,16 +24,25 @@ db.emissionFactors.insertMany([
 db.userData.insertMany([
 
   {
-    name: "Paul McManus",
-    travelNumber: 12,
-    dietNumber: 10,
-    energyNumber: 8
-  },
-  {
     name: "Shrek Shrekington",
-    travelDistance: 1,
-    dietNumber: 20,
-    energyNumber: 20
+    car: "1",
+    train: "2",
+    plane: "3",
+    electricity: "4",
+    gas: "5",
+    hybrid: "6",
+    meat: "7",
+    veg: "8"
+},
+  {
+    name: "Donkey Murphy",
+    car: "9",
+    train: "8",
+    plane: "7",
+    electricity: "6",
+    gas: "5",
+    hybrid: "4",
+    meat: "3",
+    veg: "2"
   }
-])
-  ;
+]);
