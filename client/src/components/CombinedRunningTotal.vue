@@ -20,9 +20,9 @@ export default {
     }
   },
   mounted(){
-    eventBus.$on('travel-calculated', result => this.travelTotal += result)
-    eventBus.$on('energy-calculated', result => this.energyTotal += result)
-    eventBus.$on('diet-calculated', result => this.dietTotal += result)
+    eventBus.$on('travel-calculated', result => this.travelTotal = result)
+    eventBus.$on('energy-calculated', result => this.energyTotal = result)
+    eventBus.$on('diet-calculated', result => this.dietTotal = result)
 
   },
   computed:{
