@@ -10,13 +10,13 @@ db.emissionFactors.insertMany([
       plane: "26900"
     },
   energy:{
-      electricity: "0.99",
-      gas: "0.33",
-      hybrid: "0.66"
+      electricity: "700",
+      gas: "500",
+      hybrid: "600"
     },
   diet: {
-      meat: "0.5",
-      veg: "0.2"
+      meat: "19690",
+      veg: "5000"
     }
   }
 ])
