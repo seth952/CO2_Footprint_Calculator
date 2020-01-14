@@ -16,12 +16,25 @@
     <p>Veg{{breakdown.veg}}</p>
     <p>Total: {{breakdown.dietTotal}}</p>
 
-
+    
   </div>
 </template>
 <script>
+import Result from './Result.vue'
+import {eventBus} from '@/main.js'
+import {Chart} from 'highcharts-vue'
+import Highcharts from 'highcharts'
+import drilldown from 'highcharts/modules/drilldown'
+drilldown(Highcharts)
+
 export default {
-  props: ['breakdown']
+  props: ['breakdown', 'chartProp'],
+  mounted(){
+    eventBus.$on('history-pie', (banana) => {
+      this.percentage()
+    })
+  }
+
 }
 </script>
 <style lang="scss" scoped>

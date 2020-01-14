@@ -3,7 +3,7 @@
 
     <highcharts v-if="chartOptions.series[0].data.length > 0" :options="chartOptions"/>
 
-      <date-history :footprints="footprints"/>
+      <date-history :footprints="footprints" />
 
 </div>
 </template>
@@ -113,7 +113,7 @@ export default {
         y: dietPercentage,
         drilldown: "Diet"
       })
-      debugger
+
       this.chartOptions.drilldown.series.push(
         {
             name: "Travel",
