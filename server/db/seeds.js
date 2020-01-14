@@ -15,8 +15,8 @@ db.emissionFactors.insertMany([
       hybrid: "600"
     },
   diet: {
-      meat: "19690",
-      veg: "5000"
+      meat: "0.01378",
+      veg: "0.005512"
     }
   }
 ])
