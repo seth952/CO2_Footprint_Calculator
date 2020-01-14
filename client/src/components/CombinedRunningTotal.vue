@@ -22,17 +22,25 @@ export default {
       dietTotal: 0
     }
   },
+  methods: {
+    resetTotals(){
+      this.travelTotal = 0,
+      this.energyTotal = 0,
+      this.dietTotal = 0
+      }
+  },
   mounted(){
     eventBus.$on('travel-calculated', result => this.travelTotal = result)
     eventBus.$on('energy-calculated', result => this.energyTotal = result)
     eventBus.$on('diet-calculated', result => this.dietTotal = result)
+    eventBus.$on('totals-cleared', (banana) => {
+    this.resetTotals()
+    })
 
   },
   computed:{
     combinedTotal(){
       let resultCombined = this.dietTotal + this.energyTotal + this.travelTotal
-
-
       eventBus.$emit('combined-calculated', resultCombined)
       return resultCombined
     }

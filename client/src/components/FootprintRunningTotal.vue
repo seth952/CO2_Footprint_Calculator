@@ -50,7 +50,6 @@ export default {
 
     eventBus.$on('running-total-travel', (changeFootprint)=> {
     this.travelRunningTotal = changeFootprint
-
     })
     eventBus.$on('running-total-energy', (changeFootprint)=> {
     this.energyRunningTotal = changeFootprint
