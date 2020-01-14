@@ -34,8 +34,13 @@ export default {
     'diet-running-total': DietRunningTotal,
     'combined-running-total': CombinedRunningTotal
     },
-
-
+  methods: {
+    resetTotals(){
+      this.travelRunningTotal = null,
+      this.energyRunningTotal = null,
+      this.dietRunningTotal = null
+      }
+  },
 
 
   mounted() {
@@ -53,10 +58,9 @@ export default {
     eventBus.$on('running-total-diet', (changeFootprint)=> {
     this.dietRunningTotal = changeFootprint
     })
-
-
-  
-
+    eventBus.$on('totals-cleared', (banana) => {
+    this.resetTotals()
+    })
   }
 }
 
