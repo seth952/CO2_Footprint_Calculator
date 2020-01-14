@@ -24,25 +24,33 @@ db.emissionFactors.insertMany([
 db.userData.insertMany([
 
   {
-    name: "Shrek Shrekington",
-    car: "1",
-    train: "2",
-    plane: "3",
-    electricity: "4",
-    gas: "5",
-    hybrid: "6",
-    meat: "7",
-    veg: "8"
+    date: "2020-01-14",
+    car: 4730,
+    train: 348,
+    plane: 269000,
+    electricity: 7000,
+    gas: 5000,
+    hybrid: 6000,
+    meat: 196900,
+    veg: 50000,
+    travelTotal: 274078,
+    energyTotal: 18000,
+    dietTotal: 246900,
+    combinedTotal: 538978
 },
-  {
-    name: "Donkey Murphy",
-    car: "9",
-    train: "8",
-    plane: "7",
-    electricity: "6",
-    gas: "5",
-    hybrid: "4",
-    meat: "3",
-    veg: "2"
-  }
+{
+  date: "2020-01-15",
+  car: 1419,
+  train: 104.39999999999999,
+  plane: 80700,
+  electricity: 2100,
+  gas: 1500,
+  hybrid: 1800,
+  meat: 59070,
+  veg: 15000,
+  travelTotal: 82223.4,
+  energyTotal: 5400,
+  dietTotal: 74070,
+  combinedTotal: 161693.4
+}
 ]);
