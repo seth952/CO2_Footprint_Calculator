@@ -5,6 +5,13 @@
         <label for="name">Name:</label>
         <input type="text" name="name" v-model="name">
         <h3>Travel</h3>
+        <div class="menu">
+          <li class = "item">
+            <a href="" class="btn">Travel</a>
+            <a href="" class="btn">Energy</a>
+            <a href="" class="btn">Diet</a>
+          </li>
+        </div>
         <p>Enter miles traveled by:</p>
         <label for="car">Car:</label>
         <input type="number" name="car" @input="handleRunningTravel" v-model="car">
