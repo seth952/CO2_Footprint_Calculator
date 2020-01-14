@@ -2,8 +2,8 @@
   <div class="forms" >
     <form class="" action="index.html" method="post" v-on:submit="handleSubmit">
       <div id="travel-form">
-        <label for="name">Name:</label>
-        <input type="text" name="name" v-model="name">
+        <label for="Date">Date:</label>
+        <input type="date" name="date" v-model="date">
         <h3>Travel</h3>
         <p>Enter miles traveled by:</p>
         <label for="car">Car:</label>
@@ -55,7 +55,7 @@ export default {
   name: "forms-live-here",
   data(){
     return{
-      name: null,
+      date: null,
       car: null,
       train: null,
       plane: null,
@@ -83,7 +83,7 @@ export default {
   handleSubmit(e){
     e.preventDefault()
     const newFootprint = {
-      name: this.name,
+      date: this.date,
       car: this.car * 473,
       train: this.train * 34.80,
       plane: this.plane * 26900,
