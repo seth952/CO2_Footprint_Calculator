@@ -1,8 +1,8 @@
 <template>
   <div class="">
     <label for="api-thing">Choose Date: </label>
-    <select @change="handleChange" id="api-thing"v-model="selectedDate">
-      <option disabled selected value> -- select an option -- </option>
+    <select @change="handleChange" id="api-thing" v-model="selectedDate">
+      <option selected disabled>select an option</option>
       <option v-for="(foot, index) of footprints" :key="index" :value="foot">
         Previous Entry: {{foot.date}}
         </option>
