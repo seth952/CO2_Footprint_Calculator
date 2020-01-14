@@ -38,7 +38,9 @@
       </div>
       <!-- <input type="submit" name="Submit"/> -->
       <br>
-      <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
+      <button class="submit" type="submit" alt="Submit"><img src="https://cdn.imgbin.com/7/5/7/imgbin-carbon-footprint-sustainability-natural-environment-carbon-neutrality-ecological-footprint-footprints-green-foot-illustration-UqnUrXDjMFC5EjtEqXuZfhkxn.jpg" width="60px"height="100px"></button>
+      <p>Submit</p>
+
 
     </form>
     <br>
@@ -151,5 +153,8 @@ form {
 label {
 	min-width: 100px;
 	display: inline-block;
+}
+.submit {
+  cursor: pointer;
 }
 </style>

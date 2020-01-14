@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <label for="api-thing">Choose Date: </label>
     <select @change="handleChange" id="api-thing"v-model="selectedDate">
       <option disabled selected value> -- select an option -- </option>
@@ -155,6 +155,8 @@ export default {
 }
 }
 }
+
 </script>
 <style lang="scss" scoped>
+
 </style>

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="div">
 
     <highcharts v-if="chartOptions.series[0].data.length > 0" :options="chartOptions"/>
 
@@ -175,4 +175,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.div {
+  background-color: lightslategrey;
+}
 </style>

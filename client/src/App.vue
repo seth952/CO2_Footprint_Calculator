@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1>CO/2/BY/U</h1>
+    <img class="pic"src="https://ya-webdesign.com/transparent250_/carbon-footprint-logo-png-1.png">
+    <h1 class="head">CO2/BY/U</h1>
     <br>
     <p>CO/2/BY/U footprint calculator is based on emissions from your previous week activities.</p>
       <p>If you would like to calculate your carbon footprint please enter all relevant details in boxes below.
@@ -48,6 +49,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: lightslategrey;
+  background-color: stretch;
+  overflow-x: hidden;
+  background-size: cover;
 
 
 }
@@ -59,4 +64,22 @@ export default {
   color: white;
   font-size: 30px;
 }
+.head{
+  font-family: times;
+  font-size: 80px;
+  padding: 0px;
+  color: black;
+  color: inherit;
+
+}
+p{
+  color: black;
+}
+.pic{
+  padding-top: 120px;
+
+
+}
+
+
 </style>
