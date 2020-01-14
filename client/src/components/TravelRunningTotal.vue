@@ -1,7 +1,9 @@
 <template lang="html">
-
-  <div v-if="emissionsProp && travelProp" class="travelProp">
-    <h3>Travel Total: {{travelTotal}}</h3>
+  <div v-if="emissionsProp && travelProp">
+      <h4>Travel Total: {{travelTotal}}</h4>
+  </div>
+  <div v-else>
+    <h4>Travel Total: </h4>
   </div>
 </template>
 
