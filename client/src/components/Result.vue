@@ -322,7 +322,6 @@ export default {
     eventBus.$on('footprint-added', (footprint)=> {
       this.footprints.push(footprint)
       this.chartOptions.series[0].data.length = 0
-      debugger
       this.chartOptions.title = {text: `CO2 Footprint for ${footprint.date}`}
       this.percentage(footprint)
 
