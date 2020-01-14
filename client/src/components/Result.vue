@@ -3,6 +3,8 @@
 
     <highcharts v-if="chartOptions.series[0].data.length > 0" :options="chartOptions"/>
 
+      <date-history :footprints="footprints"/>
+
 </div>
 </template>
 
@@ -12,6 +14,7 @@ import {eventBus} from '@/main.js'
 import {Chart} from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import drilldown from 'highcharts/modules/drilldown'
+import DateHistory from './DateHistory';
 
 drilldown(Highcharts)
 export default {
@@ -287,7 +290,8 @@ export default {
 }
 },
   components:{
-    highcharts: Chart
+    highcharts: Chart,
+    'date-history': DateHistory
   },
   methods: {
     percentage(footprint){

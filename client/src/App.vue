@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <h1>CO/2/BY/U</h1>
+    <br>
+    <p>CO/2/BY/U footprint calculator is based on emissions from your previous week activities.</p>
+      <p>If you would like to calculate your carbon footprint please enter all relevant details in boxes below.
+    </p><p>Thank you.</p>
+    <br>
     <footprint-running-total/>
     <forms-live-here/>
     <result />
