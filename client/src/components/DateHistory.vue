@@ -24,7 +24,6 @@ import {Chart} from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import drilldown from 'highcharts/modules/drilldown'
 drilldown(Highcharts)
-
 export default {
   props: ['footprints'],
   data(){
@@ -35,12 +34,10 @@ export default {
           type: 'pie'
         },
         title: {
-
         },
         subtitle: {
           text: 'Click the slices to view a breakdown of your footprint'
         },
-
         accessibility: {
           announceNewData: {
             enabled: true
@@ -49,7 +46,6 @@ export default {
             valueSuffix: '%'
           }
         },
-
         plotOptions: {
           series: {
             dataLabels: {
@@ -58,28 +54,23 @@ export default {
             }
           }
         },
-
         tooltip: {
           headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
           pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of Total Footprint<br/>'
         },
-
         series: [
           {
             name: "Foot",
             colorByPoint: true,
             data: [
-
             ]
           }
         ],
         drilldown: {
           series: [
-
           ]
         }
       }
-
     }
   },
   components:{
@@ -94,25 +85,19 @@ export default {
       this.percentage()
     },
     percentage(){
-      
+
       let travelPercentage = (this.selectedDate.travelTotal / this.selectedDate.combinedTotal) * 100
       let energyPercentage = (this.selectedDate.energyTotal /this.selectedDate.combinedTotal) * 100
       let dietPercentage = (this.selectedDate.dietTotal / this.selectedDate.combinedTotal) * 100
-
       //drilldown
       let travelDrillCar = (this.selectedDate.car / this.selectedDate.travelTotal) * 100
       let travelDrillTrain = (this.selectedDate.train / this.selectedDate.travelTotal) * 100
       let travelDrillPlane = (this.selectedDate.plane / this.selectedDate.travelTotal) * 100
-
       let energyDrillElectriciy = (this.selectedDate.electricity / this.selectedDate.energyTotal) * 100
       let energyDrillGas = (this.selectedDate.gas / this.selectedDate.energyTotal) * 100
       let energyDrillHybrid = (this.selectedDate.hybrid / this.selectedDate.energyTotal) * 100
-
       let dietDrillMeat = (this.selectedDate.meat / this.selectedDate.dietTotal) * 100
       let dietDrillVeg = (this.selectedDate.veg / this.selectedDate.dietTotal) * 100
-
-
-
       this.chartOptions.series[0].data.push({
         name: "Travel",
         y: travelPercentage,
@@ -128,7 +113,6 @@ export default {
         y: dietPercentage,
         drilldown: "Diet"
       })
-
       this.chartOptions.drilldown.series.push(
         {
           name: "Travel",
@@ -168,11 +152,9 @@ export default {
     ]
   }
 )
-
 }
 }
 }
-
 </script>
 <style lang="scss" scoped>
 </style>

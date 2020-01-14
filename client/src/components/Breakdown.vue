@@ -16,7 +16,7 @@
     <p>Veg{{breakdown.veg}}</p>
     <p>Total: {{breakdown.dietTotal}}</p>
 
-    
+
   </div>
 </template>
 <script>
@@ -26,7 +26,6 @@ import {Chart} from 'highcharts-vue'
 import Highcharts from 'highcharts'
 import drilldown from 'highcharts/modules/drilldown'
 drilldown(Highcharts)
-
 export default {
   props: ['breakdown', 'chartProp'],
   mounted(){
@@ -34,7 +33,6 @@ export default {
       this.percentage()
     })
   }
-
 }
 </script>
 <style lang="scss" scoped>
