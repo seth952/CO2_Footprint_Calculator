@@ -2,19 +2,19 @@
   <div v-if="breakdown">
     <h2>CO2 Breakdown</h2>
     <h4>Travel</h4>
-    <p>Car:{{breakdown.car}}</p>
-    <p>Train:{{breakdown.train}}</p>
-    <p>Plane:{{breakdown.plane}}</p>
-    <p>Total: {{breakdown.travelTotal}}</p>
+    <p>Car: {{breakdown.car}} miles</p>
+    <p>Train: {{breakdown.train}} miles</p>
+    <p>Plane: {{breakdown.plane}} miles</p>
+    <p>Total: {{breakdown.travelTotal}} CO2e</p>
     <h4>Energy</h4>
-    <p>Electricity:{{breakdown.electricity}}</p>
-    <p>Gas:{{breakdown.gas}}</p>
-    <p>Hybrid:{{breakdown.hybrid}}</p>
-    <p>Total: {{breakdown.energyTotal}}</p>
+    <p>Electricity: {{breakdown.electricity}} kilowatts</p>
+    <p>Gas:{{breakdown.gas}} kilowatts</p>
+    <p>Hybrid:{{breakdown.hybrid}} kilowatts</p>
+    <p>Total: {{breakdown.energyTotal}} CO2e</p>
     <h4>Diet</h4>
-    <p>Meat:{{breakdown.meat}}</p>
-    <p>Veg{{breakdown.veg}}</p>
-    <p>Total: {{breakdown.dietTotal}}</p>
+    <p>Meat: {{breakdown.meat}} lbs</p>
+    <p>Veg: {{breakdown.veg}} lbs</p>
+    <p>Total: {{breakdown.dietTotal}} CO2e</p>
 
 
   </div>
