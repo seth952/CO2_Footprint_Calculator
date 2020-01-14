@@ -1,6 +1,9 @@
 <template lang="html">
-    <div class="">
-      <h4>Combined Total:{{ combinedTotal }}</h4>
+    <div v-if=" this.combinedTotal > 0">
+      <h3>Combined Total:{{ combinedTotal }}</h3>
+    </div>
+    <div v-else>
+      <h3>Combined Total:</h3>
     </div>
 </template>
 
