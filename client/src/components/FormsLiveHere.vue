@@ -3,7 +3,7 @@
     <form class="" action="index.html" method="post" v-on:submit="handleSubmit">
       <div id="travel-form">
         <label for="Date">Date:</label>
-        <input type="date" name="date" v-model="date">
+        <input type="date" name="date" v-model="date" required>
         <h3>Travel</h3>
         <p>Enter miles traveled by:</p>
         <label for="car">Car:</label>
@@ -29,7 +29,7 @@
       </div>
       <div id="diet-form">
         <h3>Diet</h3>
-        <p>Enter kg eaten in:</p>
+        <p>Enter kcal eaten in:</p>
         <label for="meat">Meat:</label>
         <input type="number" name="meat" @input="handleRunningDiet" v-model="meat">
         <br>
@@ -67,15 +67,22 @@ export default {
       travelTotal: null,
       energyTotal: null,
       dietTotal: null,
-      combinedTotal: null
+      combinedTotal: null,
+      emissions: []
     }
   },
   mounted(){
+    EmissionFactorsService.getEmissionFactors()
+    .then(emissions => this.emissions = emissions)
+
 
     eventBus.$on('travel-calculated', result => this.travelTotal = result)
     eventBus.$on('energy-calculated', result => this.energyTotal = result)
     eventBus.$on('diet-calculated', result => this.dietTotal = result)
     eventBus.$on('combined-calculated', result => this.combinedTotal = result)
+    eventBus.$on('combined-calculated', result => this.combinedTotal = result)
+    eventBus.$on('emissions-getter', result => this.emissions = result)
+
 
 
     },
@@ -84,14 +91,14 @@ export default {
     e.preventDefault()
     const newFootprint = {
       date: this.date,
-      car: this.car * 473,
-      train: this.train * 34.80,
-      plane: this.plane * 26900,
-      electricity: this.electricity * 700,
-      gas: this.gas * 500,
-      hybrid: this.hybrid * 600,
-      meat: this.meat * 19690,
-      veg: this.veg * 5000,
+      car: ((this.car * this.emissions[0].travel.car)/ 365),
+      train: ((this.train * this.emissions[0].travel.train)/ 365),
+      plane: ((this.plane * this.emissions[0].travel.plane)/ 365),
+      electricity: ((this.electricity * this.emissions[0].energy.electricity)/ 365),
+      gas: ((this.gas * this.emissions[0].energy.gas)/ 365),
+      hybrid: ((this.hybrid * this.emissions[0].energy.hybrid)),
+      meat: ((this.meat * this.emissions[0].diet.meat)),
+      veg: ((this.veg * this.emissions[0].diet.veg)),
       travelTotal: this.travelTotal,
       energyTotal: this.energyTotal,
       dietTotal: this.dietTotal,

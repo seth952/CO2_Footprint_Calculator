@@ -1,6 +1,6 @@
 <template lang="html">
   <div v-if="emissionsProp && travelProp">
-      <h4>Travel Total: {{travelTotal}}</h4>
+      <h4>Travel Total: {{travelTotal}}kg CO2e/day</h4>
   </div>
   <div v-else>
     <h4>Travel Total: </h4>
@@ -16,9 +16,9 @@ export default {
 computed: {
   travelTotal(){
     let travelArray = []
-    travelArray.push(this.travelProp.car * this.emissionsProp[0].travel.car)
-    travelArray.push(this.travelProp.train * this.emissionsProp[0].travel.train)
-    travelArray.push(this.travelProp.plane * this.emissionsProp[0].travel.plane)
+    travelArray.push((this.travelProp.car * this.emissionsProp[0].travel.car) / 365)
+    travelArray.push((this.travelProp.train * this.emissionsProp[0].travel.train) / 365)
+    travelArray.push((this.travelProp.plane * this.emissionsProp[0].travel.plane)/ 365)
 
   const sumTravel = function(someArray){
     return someArray.reduce((total, travel) => {

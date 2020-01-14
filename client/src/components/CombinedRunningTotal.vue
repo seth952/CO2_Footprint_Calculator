@@ -1,6 +1,6 @@
 <template lang="html">
     <div v-if=" this.combinedTotal > 0">
-      <h3>Combined Total:{{ combinedTotal }}</h3>
+      <h3>Combined Total:{{ combinedTotal }}kg CO2e/day</h3>
     </div>
     <div v-else>
       <h3>Combined Total:</h3>

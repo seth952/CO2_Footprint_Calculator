@@ -1,6 +1,6 @@
 <template lang="html">
   <div v-if="emissionsProp && energyProp">
-    <h4>Energy Total: {{energyTotal}}</h4>
+    <h4>Energy Total: {{energyTotal}}kg CO2e/day</h4>
   </div>
   <div v-else>
     <h4>Energy Total: </h4>
@@ -15,9 +15,9 @@ export default {
   computed:{
     energyTotal(){
       let energyArray = []
-      energyArray.push(this.energyProp.electricity * this.emissionsProp[0].energy.electricity)
-      energyArray.push(this.energyProp.gas * this.emissionsProp[0].energy.gas)
-      energyArray.push(this.energyProp.hybrid * this.emissionsProp[0].energy.hybrid)
+      energyArray.push((this.energyProp.electricity * this.emissionsProp[0].energy.electricity) / 365)
+      energyArray.push((this.energyProp.gas * this.emissionsProp[0].energy.gas) / 365)
+      energyArray.push((this.energyProp.hybrid * this.emissionsProp[0].energy.hybrid)/ 365)
 
     const sumEnergy = function(someArray){
       return someArray.reduce((total, energy) => {

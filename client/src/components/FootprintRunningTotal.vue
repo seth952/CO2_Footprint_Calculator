@@ -60,6 +60,8 @@ export default {
     eventBus.$on('totals-cleared', (banana) => {
     this.resetTotals()
     })
+
+
   }
 }
 

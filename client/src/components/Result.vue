@@ -58,7 +58,7 @@ export default {
 
     series: [
         {
-            name: "Foot",
+            name: "Footprint",
             colorByPoint: true,
             data: [
 
@@ -159,6 +159,8 @@ export default {
   mounted(){
     UserDataService.getUserData()
     .then(footprints => this.footprints = footprints)
+
+  
 
     eventBus.$on('footprint-added', (footprint)=> {
       this.footprints.push(footprint)

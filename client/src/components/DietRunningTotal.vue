@@ -1,6 +1,6 @@
 <template lang="html">
     <div v-if="emissionsProp && dietProp">
-      <h4>Diet Total: {{dietTotal}}</h4>
+      <h4>Diet Total: {{dietTotal}} kg CO2e/day</h4>
     </div>
     <div v-else>
       <h4>Diet Total: </h4>

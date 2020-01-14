@@ -66,7 +66,7 @@ export default {
 
         series: [
           {
-            name: "Foot",
+            name: "Footprint",
             colorByPoint: true,
             data: [
 
@@ -94,7 +94,7 @@ export default {
       this.percentage()
     },
     percentage(){
-      
+
       let travelPercentage = (this.selectedDate.travelTotal / this.selectedDate.combinedTotal) * 100
       let energyPercentage = (this.selectedDate.energyTotal /this.selectedDate.combinedTotal) * 100
       let dietPercentage = (this.selectedDate.dietTotal / this.selectedDate.combinedTotal) * 100
