@@ -1,6 +1,9 @@
 <template lang="html">
-    <div v-if="emissionsProp && dietProp" class="">
-      <h3>Diet Total: {{dietTotal}}</h3>
+    <div v-if="emissionsProp && dietProp">
+      <h4>Diet Total: {{dietTotal}}</h4>
+    </div>
+    <div v-else>
+      <h4>Diet Total: </h4>
     </div>
 </template>
 
