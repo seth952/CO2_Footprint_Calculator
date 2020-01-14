@@ -37,6 +37,7 @@
         <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
       </div>
       <!-- <input type="submit" name="Submit"/> -->
+      <br>
       <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
 
     </form>
@@ -98,7 +99,10 @@ export default {
       }
 
       UserDataService.postFootprint(newFootprint)
-      .then(res => eventBus.$emit('footprint-added', res))
+      .then((res) => {
+        e.target.reset()
+        eventBus.$emit('footprint-added', res)
+      })
 
 
     // UserDataService.post(newFootprint)

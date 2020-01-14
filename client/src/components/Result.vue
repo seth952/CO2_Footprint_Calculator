@@ -19,7 +19,6 @@ export default {
   data(){
     return{
       footprints: [],
-      percentages: [],
       chartOptions:{
     chart: {
         type: 'pie'
@@ -59,19 +58,7 @@ export default {
             name: "Foot",
             colorByPoint: true,
             data: [
-                // {
-                //     name: this.footprints[this.footprints.length -1].travelTotal,
-                //     y: this.percentages[0],
-                //     drilldown: "Chrome"
-                // },
-                // {
-                //   name: this.footprints[this.footprints.length -1].energyTotal,
-                //   y: this.percentages[1],
-                // },
-                // {
-                //   name: this.footprints[this.footprints.length -1].dietTotal,
-                //   y: this.percentages[2],
-                // }
+
             ]
         }
     ],
@@ -312,9 +299,7 @@ export default {
       this.chartOptions.series[0].data.push({y: travelPercentage})
       this.chartOptions.series[0].data.push({y: energyPercentage})
       this.chartOptions.series[0].data.push({y: dietPercentage})
-      // this.percentages.push(travelPercentage)
-      // this.percentages.push(energyPercentage)
-      // this.percentages.push(dietPercentage)
+
     }
   },
   mounted(){
@@ -322,8 +307,8 @@ export default {
     .then(footprints => this.footprints = footprints)
 
     eventBus.$on('footprint-added', (footprint)=> {
-      console.log(footprint)
       this.footprints.push(footprint)
+      this.chartOptions.series[0].data.length = 0
       this.percentage(footprint)
 
     })
