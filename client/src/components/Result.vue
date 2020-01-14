@@ -296,9 +296,18 @@ export default {
       let dietPercentage = (footprint.dietTotal / footprint.combinedTotal) * 100
 
 
-      this.chartOptions.series[0].data.push({y: travelPercentage})
-      this.chartOptions.series[0].data.push({y: energyPercentage})
-      this.chartOptions.series[0].data.push({y: dietPercentage})
+      this.chartOptions.series[0].data.push({
+        name: "Travel",
+        y: travelPercentage
+      })
+      this.chartOptions.series[0].data.push({
+        name: "Energy",
+        y: energyPercentage
+      })
+      this.chartOptions.series[0].data.push({
+        name: "Diet",
+        y: dietPercentage
+      })
 
     }
   },
