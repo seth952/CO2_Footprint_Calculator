@@ -38,7 +38,10 @@
       </div>
       <!-- <input type="submit" name="Submit"/> -->
       <br>
-      <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
+      <br>
+      <button class="submit" type="submit" alt="Submit"><img src="https://images.vexels.com/media/users/3/151082/isolated/preview/56bd227524ed2184915800eb5a586a2d-left-foot-footprint-silhouette-by-vexels.png" width="60px"height="70px"></button>
+      <p>Submit</p>
+
 
     </form>
     <br>
@@ -158,5 +161,8 @@ form {
 label {
 	min-width: 100px;
 	display: inline-block;
+}
+.submit {
+  cursor: pointer;
 }
 </style>

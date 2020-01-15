@@ -1,8 +1,8 @@
 <template>
-  <div v-if="breakdown">
+  <div v-if="breakdown" class="break">
     <h2>CO2 Breakdown</h2>
     <h4>Travel</h4>
-<<<<<<< HEAD
+
     <p>Car:{{breakdown.car}}kg CO2e/day</p>
     <p>Train:{{breakdown.train}}kg CO2e/day</p>
     <p>Plane:{{breakdown.plane}}kg CO2e/day</p>
@@ -16,21 +16,8 @@
     <p>Meat:{{breakdown.meat}}kg CO2e/day</p>
     <p>Veg{{breakdown.veg}}kg CO2e/day</p>
     <p>Total: {{breakdown.dietTotal}}kg CO2e/day</p>
-=======
-    <p>Car: {{breakdown.car}} miles</p>
-    <p>Train: {{breakdown.train}} miles</p>
-    <p>Plane: {{breakdown.plane}} miles</p>
-    <p>Total: {{breakdown.travelTotal}} CO2e</p>
-    <h4>Energy</h4>
-    <p>Electricity: {{breakdown.electricity}} kilowatts</p>
-    <p>Gas:{{breakdown.gas}} kilowatts</p>
-    <p>Hybrid:{{breakdown.hybrid}} kilowatts</p>
-    <p>Total: {{breakdown.energyTotal}} CO2e</p>
-    <h4>Diet</h4>
-    <p>Meat: {{breakdown.meat}} lbs</p>
-    <p>Veg: {{breakdown.veg}} lbs</p>
-    <p>Total: {{breakdown.dietTotal}} CO2e</p>
->>>>>>> 5ef5c53855bb643f798e91229f8f340ecbebd10b
+    
+
 
 
   </div>
@@ -51,5 +38,9 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="css" scoped>
+.break{
+  background-color: white;
+
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div class="">
+  <div class="dropdown">
     <label for="api-thing">Choose Date: </label>
-    <select @change="handleChange" id="api-thing"v-model="selectedDate">
+    <select class="dropdown" @change="handleChange" id="api-thing"v-model="selectedDate">
       <option disabled selected value> -- select an option -- </option>
       <option v-for="(foot, index) of footprints" :key="index" :value="foot">
         Previous Entry: {{foot.date}}
@@ -28,6 +28,7 @@ export default {
   props: ['footprints'],
   data(){
     return{
+      // show: true,
       selectedDate: null,
       chartOptions:{
         chart: {
@@ -83,6 +84,7 @@ export default {
       this.chartOptions.series[0].data.length = 0
       this.chartOptions.title = {text: `CO2 Footprint for ${this.selectedDate.date}`}
       this.percentage()
+      // this.show
     },
     percentage(){
 
@@ -153,8 +155,15 @@ export default {
   }
 )
 }
+},
+
 }
-}
+
+
 </script>
-<style lang="scss" scoped>
+<style lang="css" scoped>
+.dropdown{
+  cursor: pointer;
+}
+
 </style>
