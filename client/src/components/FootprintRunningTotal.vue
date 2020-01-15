@@ -71,8 +71,8 @@ export default {
 
 <style lang="css" scoped>
 .running-total-container {
-  width: 30%;
-  height: auto;
+  width: auto;
+  height: 10%;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.7);
 	padding: 20px;

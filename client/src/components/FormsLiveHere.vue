@@ -7,7 +7,7 @@
         <h3 @mouseover="hovertravel = true" @mouseleave="hovertravel = false"><u>Travel</u></h3>
           <li v-if="hovertravel">Average user daily car miles: 20</li>
           <li v-if="hovertravel">Average user daily train miles: 14</li>
-          <li v-if="hovertravel">Average user daily plane miles: 1</li>
+          <li v-if="hovertravel">Average user daily plane miles: 0</li>
           <p>Enter miles traveled by:</p>
           <label for="car">Car:</label>
           <input type="number" name="car" @input="handleRunningTravel" v-model="car">
@@ -40,10 +40,12 @@
           <label for="veg">Veg:</label>
           <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
       <br>
-      <br>
+
       <br>
       <button class="submit" type="submit" alt="Submit"><img src="https://images.vexels.com/media/users/3/151082/isolated/preview/56bd227524ed2184915800eb5a586a2d-left-foot-footprint-silhouette-by-vexels.png" width="60px"height="70px"></button>
-      <p>Submit</p>
+      <br>
+      <label for="button">Submit</label>
+
     </form>
     <br>
   </div>
@@ -101,7 +103,7 @@ export default {
       plane: ((this.plane * this.emissions[0].travel.plane)/ 365),
       electricity: ((this.electricity * this.emissions[0].energy.electricity)/ 365),
       gas: ((this.gas * this.emissions[0].energy.gas)/ 365),
-      hybrid: ((this.hybrid * this.emissions[0].energy.hybrid)),
+      hybrid: ((this.hybrid * this.emissions[0].energy.hybrid)/ 365),
       meat: ((this.meat * this.emissions[0].diet.meat)),
       veg: ((this.veg * this.emissions[0].diet.veg)),
       travelTotal: this.travelTotal,
@@ -154,7 +156,7 @@ h2 {
 	padding: 0;
 }
 form {
-	width: 30%;
+	width: auto;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.7);
 	padding: 20px;

@@ -2,13 +2,16 @@
   <div id="app">
     <img class="pic"src="https://ya-webdesign.com/transparent250_/carbon-footprint-logo-png-1.png">
     <h1 class="head">CO2/BY/U</h1>
+    <div class="about">
+      <p>CO/2/BY/U is a daily activity tracker designed to help you keep track of your carbon footprint.</p>
+        <p>To calculate your footprint enter all relevant details in fields below.</p>
+    </div>
     <br>
-    <p>CO/2/BY/U is a daily activity tracker designed to help you keep track of your carbon footprint.</p>
-      <p>To calculate your carbon footprint enter all relevant details in boxes below.</p>
-    <br>
-    <footprint-running-total/>
+  <div class="form-running">
     <forms-live-here/>
-    <result />
+    <footprint-running-total/>
+    <result/>
+  </div>
   </div>
 </template>
 <script>
@@ -57,30 +60,36 @@ export default {
 
 }
 
-.heading {
+/* .heading {
   padding: 10px;
   text-align: center;
   background: lightslategrey;
   color: white;
   font-size: 30px;
-}
+} */
 .head{
   font-family: times;
   font-size: 80px;
   padding: 0px;
   color: black;
   color: inherit;
-
 }
-p{
+
+.about {
+  font-weight: bolder;
+}
+
+p {
   color: black;
 }
 .pic{
-  padding-top: 120px;
+  padding-top: 20px;
 }
 
 .form-running {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
 }
 

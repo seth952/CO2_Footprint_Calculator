@@ -95,7 +95,7 @@ export default {
       let travelDrillCar = (this.selectedDate.car / this.selectedDate.travelTotal) * 100
       let travelDrillTrain = (this.selectedDate.train / this.selectedDate.travelTotal) * 100
       let travelDrillPlane = (this.selectedDate.plane / this.selectedDate.travelTotal) * 100
-      let energyDrillElectriciy = (this.selectedDate.electricity / this.selectedDate.energyTotal) * 100
+      let energyDrillElectricity = (this.selectedDate.electricity / this.selectedDate.energyTotal) * 100
       let energyDrillGas = (this.selectedDate.gas / this.selectedDate.energyTotal) * 100
       let energyDrillHybrid = (this.selectedDate.hybrid / this.selectedDate.energyTotal) * 100
       let dietDrillMeat = (this.selectedDate.meat / this.selectedDate.dietTotal) * 100
@@ -134,7 +134,7 @@ export default {
         id: "Energy",
         data: [
           ["Electricity",
-          energyDrillElectriciy
+          energyDrillElectricity
         ],
         ["Gas",
         energyDrillGas],

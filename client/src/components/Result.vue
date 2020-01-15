@@ -89,10 +89,10 @@ export default {
       let travelDrillTrain = (footprint.train / footprint.travelTotal) * 100
       let travelDrillPlane = (footprint.plane / footprint.travelTotal) * 100
 
-      let energyDrillElectriciy = (footprint.electricity / footprint.energyTotal) * 100
+      let energyDrillElectricity = (footprint.electricity / footprint.energyTotal) * 100
       let energyDrillGas = (footprint.gas / footprint.energyTotal) * 100
       let energyDrillHybrid = (footprint.hybrid / footprint.energyTotal) * 100
-
+      
       let dietDrillMeat = (footprint.meat / footprint.dietTotal) * 100
       let dietDrillVeg = (footprint.veg / footprint.dietTotal) * 100
 
@@ -133,7 +133,7 @@ export default {
           id: "Energy",
           data: [
             ["Electricity",
-            energyDrillElectriciy
+            energyDrillElectricity
             ],
             ["Gas",
           energyDrillGas],
@@ -160,7 +160,7 @@ export default {
     UserDataService.getUserData()
     .then(footprints => this.footprints = footprints)
 
-  
+
 
     eventBus.$on('footprint-added', (footprint)=> {
       this.footprints.push(footprint)
