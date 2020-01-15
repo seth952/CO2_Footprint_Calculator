@@ -4,7 +4,7 @@
       <energy-running-total :emissionsProp="emissions" :energyProp="energyRunningTotal"/>
       <diet-running-total :emissionsProp="emissions" :dietProp="dietRunningTotal"/>
       <combined-running-total />
-    </div>
+  </div>
 </template>
 
 <script>
@@ -71,8 +71,8 @@ export default {
 
 <style lang="css" scoped>
 .running-total-container {
-  width: auto;
-  height: 200px;
+  width: 30%;
+  height: auto;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.7);
 	padding: 20px;

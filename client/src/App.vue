@@ -55,7 +55,6 @@ export default {
   padding: 10px;
   background-image: url('http://blog.hostbaby.com/wp-content/uploads/2014/03/Trees_1400x900.png');
 
-
 }
 
 .heading {
@@ -78,6 +77,11 @@ p{
 }
 .pic{
   padding-top: 120px;
+}
+
+.form-running {
+  display: flex;
+
 }
 
 

@@ -154,7 +154,7 @@ h2 {
 	padding: 0;
 }
 form {
-	width: 75%;
+	width: 30%;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.7);
 	padding: 20px;
