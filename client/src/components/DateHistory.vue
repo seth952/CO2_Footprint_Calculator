@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import Breakdown from './Breakdown';
+import Breakdown from './Breakdown.vue';
 import {eventBus} from '../main.js';
 import HotelService from '@/services/UserDataService';
 import {Chart} from 'highcharts-vue'
