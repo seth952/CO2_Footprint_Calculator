@@ -3,7 +3,7 @@
     <img class="pic"src="https://ya-webdesign.com/transparent250_/carbon-footprint-logo-png-1.png">
     <h1 class="head">CO2/BY/U</h1>
     <br>
-    <p>CO/2/BY/U footprint calculator is based on emissions from your previous week activities.</p>
+    <p>CO2/BY/U footprint calculator is based on emissions from your previous week activities.</p>
       <p>If you would like to calculate your carbon footprint please enter all relevant details in boxes below.
     </p><p>Thank you.</p>
     <br>
@@ -53,6 +53,8 @@ export default {
   background-color: stretch;
   overflow-x: hidden;
   background-size: cover;
+  padding: 10px;
+  background-image: url('http://blog.hostbaby.com/wp-content/uploads/2014/03/Trees_1400x900.png');
 
 
 }

@@ -176,6 +176,9 @@ export default {
 
 <style lang="css" scoped>
 .div {
-  background-color: lightslategrey;
+  /* background-color: lightslategrey; */
+  padding: 20px;
+  margin: 110px;
+  align-content: flex-end;
 }
 </style>
