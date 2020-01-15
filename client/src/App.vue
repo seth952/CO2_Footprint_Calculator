@@ -3,9 +3,8 @@
     <img class="pic"src="https://ya-webdesign.com/transparent250_/carbon-footprint-logo-png-1.png">
     <h1 class="head">CO2/BY/U</h1>
     <br>
-    <p>CO2/BY/U footprint calculator is based on emissions from your previous week activities.</p>
-      <p>If you would like to calculate your carbon footprint please enter all relevant details in boxes below.
-    </p><p>Thank you.</p>
+    <p>CO/2/BY/U is a daily activity tracker designed to help you keep track of your carbon footprint.</p>
+      <p>To calculate your carbon footprint enter all relevant details in boxes below.</p>
     <br>
     <footprint-running-total/>
     <forms-live-here/>
