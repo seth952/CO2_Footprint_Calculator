@@ -1,11 +1,11 @@
 <template lang="html">
-  <div class="">
+  <div class="result">
 
     <highcharts v-if="chartOptions.series[0].data.length > 0" :options="chartOptions"/>
 
       <date-history :footprints="footprints" />
 
-</div>
+    </div>
 </template>
 
 <script>
@@ -175,4 +175,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+result {
+
+    background-color: #BFB783;
+
+}
 </style>

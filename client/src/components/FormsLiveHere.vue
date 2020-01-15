@@ -1,50 +1,47 @@
 <template>
-  <div class="forms" >
-    <form class="" action="index.html" method="post" v-on:submit="handleSubmit">
-      <div id="travel-form">
-        <label for="Date">Date:</label>
+  <div>
+    <form class="forms" action="index.html" method="post" v-on:submit="handleSubmit">
+        <h3 for="Date">Date:</h3>
         <input type="date" name="date" v-model="date">
-        <h3>Travel</h3>
-        <p>Enter miles traveled by:</p>
-        <label for="car">Car:</label>
-        <input type="number" name="car" @input="handleRunningTravel" v-model="car">
-        <br>
-        <label for="train">Train:</label>
-        <input type="number" name="train" @input="handleRunningTravel" v-model="train">
-        <br>
-        <label for="plane">Plane:</label>
-        <input type="number" name="plane" @input="handleRunningTravel" v-model="plane">
-      </div>
-      <div id="energy-form">
-        <h3>Energy</h3>
-        <p>Enter kilowatts used:</p>
-        <label for="electricity">Electricity:</label>
-        <input type="number" name="electricity" @input="handleRunningEnergy" v-model="electricity">
-        <br>
-        <label for="gas">Gas:</label>
-        <input type="number" name="gas" @input="handleRunningEnergy" v-model="gas">
-        <br>
-        <label for="hybrid">Hybrid:</label>
-        <input type="number" name="hybrid" @input="handleRunningEnergy" v-model="hybrid">
-      </div>
-      <div id="diet-form">
-        <h3>Diet</h3>
-        <p>Enter kg eaten in:</p>
-        <label for="meat">Meat:</label>
-        <input type="number" name="meat" @input="handleRunningDiet" v-model="meat">
-        <br>
-        <label for="veg">Veg:</label>
-        <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
-      </div>
-      <!-- <input type="submit" name="Submit"/> -->
+          <h3 @mouseover="hovertravel = true" @mouseleave="hovertravel = false">Travel</h3>
+          <li v-if="hovertravel">Average user daily car miles: 20</li>
+          <li v-if="hovertravel">Average user daily train miles: 14</li>
+          <li v-if="hovertravel">Average user daily plane miles: 1.9</li>
+          <p>Enter miles traveled by:</p>
+          <label for="car">Car:</label>
+          <input type="number" name="car" @input="handleRunningTravel" v-model="car">
+          <br>
+          <label for="train">Train:</label>
+          <input type="number" name="train" @input="handleRunningTravel" v-model="train">
+          <br>
+          <label for="plane">Plane:</label>
+          <input type="number" name="plane" @input="handleRunningTravel" v-model="plane">
+        <h3 @mouseover="hoverenergy = true" @mouseleave="hoverenergy = false">Energy</h3>
+          <li v-if="hoverenergy">Average user daily electricity used: 5</li>
+          <li v-if="hoverenergy">Average user daily gas used: 10</li>
+          <li v-if="hoverenergy">Average user daily hybrid used: 18</li>
+          <p>Enter kilowatts used:</p>
+          <label for="electricity">Electricity:</label>
+          <input type="number" name="electricity" @input="handleRunningEnergy" v-model="electricity">
+          <br>
+          <label for="gas">Gas:</label>
+          <input type="number" name="gas" @input="handleRunningEnergy" v-model="gas">
+          <br>
+          <label for="hybrid">Hybrid:</label>
+          <input type="number" name="hybrid" @input="handleRunningEnergy" v-model="hybrid">
+        <h3 @mouseover="hoverdiet = true" @mouseleave="hoverdiet = false">Diet</h3>
+          <li v-if="hoverdiet">Average user daily meat eaten: 0.25</li>
+          <li v-if="hoverdiet">Average user daily veg eaten: 0.8</li>
+          <p>Enter kg eaten in:</p>
+          <label for="meat">Meat:</label>
+          <input type="number" name="meat" @input="handleRunningDiet" v-model="meat">
+          <br>
+          <label for="veg">Veg:</label>
+          <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
       <br>
       <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button>
-
     </form>
     <br>
-    <!-- <button type="submit" alt="Submit"> <img src="https://svgsilh.com/svg_v2/1991841.svg" width="60px"height="100px"></button> -->
-
-
   </div>
 </template>
 <script>
@@ -54,7 +51,7 @@ import { eventBus } from '../main.js';
 export default {
   name: "forms-live-here",
   data(){
-    return{
+    return {
       date: null,
       car: null,
       train: null,
@@ -67,7 +64,10 @@ export default {
       travelTotal: null,
       energyTotal: null,
       dietTotal: null,
-      combinedTotal: null
+      combinedTotal: null,
+      hovertravel: false,
+      hoverenergy: false,
+      hoverdiet: false
     }
   },
   mounted(){
@@ -129,9 +129,6 @@ export default {
         }
       eventBus.$emit('running-total-diet', runningFootprint)
   },
-
-
-
 }
 }
 </script>
@@ -143,10 +140,15 @@ h2 {
 }
 form {
 	width: 75%;
+  height: auto;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.7);
-	padding: 20px;
-	margin-bottom: 40px;
+	padding: 10px;
+	margin-bottom: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+
 }
 label {
 	min-width: 100px;

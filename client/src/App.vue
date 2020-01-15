@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-    <h1>CO/2/BY/U</h1>
+    <div class="header">
+      <h1>CO/2/BY/U</h1>
+    </div>
+    <div class="about">
+      <p>CO/2/BY/U is a daily activity tracker designed to help you keep track of your carbon footprint.</p>
+      <p>To calculate your carbon footprint enter all relevant details in boxes below.</p>
+    </div>
     <br>
-    <p>CO/2/BY/U footprint calculator is based on emissions from your previous week activities.</p>
-      <p>If you would like to calculate your carbon footprint please enter all relevant details in boxes below.
-    </p><p>Thank you.</p>
-    <br>
-    <footprint-running-total/>
-    <forms-live-here/>
-    <result />
+    <div class="main">
+      <forms-live-here/>
+      <footprint-running-total/>
+    </div>
+      <result/>
+    </div>
   </div>
 </template>
 <script>
@@ -47,16 +52,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-
-
+  background-color: #BFB783
 }
 
-.heading {
-  padding: 10px;
-  text-align: center;
-  background: lightslategrey;
-  color: white;
-  font-size: 30px;
+.main {
+  background-color:;
+  display:flex;
+  justify-content: space-between;
 }
+
+
 </style>
