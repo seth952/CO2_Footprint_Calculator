@@ -1,9 +1,10 @@
 <template>
   <div>
     <form class="forms" action="index.html" method="post" v-on:submit="handleSubmit">
-        <h3 for="Date">Date:</h3>
+        <h3 for="Date"><u>Date:</u></h3>
         <input type="date" name="date" v-model="date">
-          <h3 @mouseover="hovertravel = true" @mouseleave="hovertravel = false">Travel</h3>
+        <h4>Hover over categories for more information.</h4>
+        <h3 @mouseover="hovertravel = true" @mouseleave="hovertravel = false"><u>Travel</u></h3>
           <li v-if="hovertravel">Average user daily car miles: 20</li>
           <li v-if="hovertravel">Average user daily train miles: 14</li>
           <li v-if="hovertravel">Average user daily plane miles: 1.9</li>
@@ -16,7 +17,7 @@
           <br>
           <label for="plane">Plane:</label>
           <input type="number" name="plane" @input="handleRunningTravel" v-model="plane">
-        <h3 @mouseover="hoverenergy = true" @mouseleave="hoverenergy = false">Energy</h3>
+        <h3 @mouseover="hoverenergy = true" @mouseleave="hoverenergy = false"><u>Energy</u></h3>
           <li v-if="hoverenergy">Average user daily electricity used: 5</li>
           <li v-if="hoverenergy">Average user daily gas used: 10</li>
           <li v-if="hoverenergy">Average user daily hybrid used: 18</li>
@@ -29,7 +30,7 @@
           <br>
           <label for="hybrid">Hybrid:</label>
           <input type="number" name="hybrid" @input="handleRunningEnergy" v-model="hybrid">
-        <h3 @mouseover="hoverdiet = true" @mouseleave="hoverdiet = false">Diet</h3>
+        <h3 @mouseover="hoverdiet = true" @mouseleave="hoverdiet = false"><u>Diet</u></h3>
           <li v-if="hoverdiet">Average user daily meat eaten: 0.25</li>
           <li v-if="hoverdiet">Average user daily veg eaten: 0.8</li>
           <p>Enter kg eaten in:</p>
