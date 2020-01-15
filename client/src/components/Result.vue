@@ -1,10 +1,17 @@
 <template lang="html">
   <div class="div">
+    <article class="accordion" :class="accordionClasses">
+      <div class="accordion-header" @click="toggleAccordion">
+      </div>
+      <div class="accordion-body" >
+        <div class="body-content">
 
     <highcharts v-if="chartOptions.series[0].data.length > 0" :options="chartOptions"/>
 
       <date-history :footprints="footprints" />
-
+    </div>
+          </div>
+        </article>
 </div>
 </template>
 
@@ -21,6 +28,8 @@ export default {
 
   data(){
     return{
+      show: true,
+        isOpen: false,
       footprints: [],
       chartOptions:{
     chart: {
@@ -98,6 +107,7 @@ export default {
 
 
 
+
       this.chartOptions.series[0].data.push({
         name: "Travel",
         y: travelPercentage,
@@ -154,13 +164,18 @@ export default {
         }
       )
 
-    }
+    },
+    toggleAccordion() {
+
+    this.isOpen = !this.isOpen;
+    // eventBus.$on('topic-clicked', (isOpen) => this.isOpen = false);
+  }
   },
   mounted(){
     UserDataService.getUserData()
     .then(footprints => this.footprints = footprints)
 
-  
+
 
     eventBus.$on('footprint-added', (footprint)=> {
       this.footprints.push(footprint)
@@ -170,17 +185,60 @@ export default {
 
     })
 
-}
+    eventBus.$on('form-submit', () => {
+      this.toggleAccordion();
+    })
+
+},
+computed: {
+    accordionClasses() {
+      return {
+        'is-closed': !this.isOpen,
+        'is-primary': this.isOpen,
+        'is-dark': !this.isOpen
+      }
+    }
 }
 
+}
 
 </script>
 
 <style lang="css" scoped>
 .div {
   /* background-color: lightslategrey; */
-  padding: 20px;
-  margin: 110px;
-  align-content: flex-end;
+  padding: 0px;
+  /* margin-top: 80px; */
+  /* align-content: flex-end; */
+  background-color: white;
+  width: 100%;
+  scroll-behavior: auto;
+
+
+}
+.accordion {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.accordion-header {
+    cursor: pointer;
+}
+.accordion-body   {
+    padding: 0;
+    max-height: 200em;
+    overflow: hidden;
+    transition: 5.7s ease all;
+    background-color: white;
+
+
+
+
+}
+.is-closed .accordion-body {
+    max-height: 0px;
+}
+.body-content {
+    padding: 0px;
 }
 </style>

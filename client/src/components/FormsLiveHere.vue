@@ -105,8 +105,10 @@ export default {
       travelTotal: this.travelTotal,
       energyTotal: this.energyTotal,
       dietTotal: this.dietTotal,
-      combinedTotal: this.combinedTotal
+      combinedTotal: this.combinedTotal,
+
       }
+
 
       UserDataService.postFootprint(newFootprint)
       .then((res) => {
@@ -114,6 +116,9 @@ export default {
         eventBus.$emit('footprint-added', res)
         eventBus.$emit('totals-cleared', true)
       })
+      eventBus.$emit('form-submit', true)
+
+
   },
 
   handleRunningTravel(){
@@ -139,7 +144,7 @@ export default {
         }
       eventBus.$emit('running-total-diet', runningFootprint)
   },
-
+  
 
 
 }
@@ -157,6 +162,7 @@ form {
 	background: rgba(255, 255, 255, 0.7);
 	padding: 20px;
 	margin-bottom: 40px;
+  scroll-behavior: auto;
 }
 label {
 	min-width: 100px;
@@ -164,5 +170,6 @@ label {
 }
 .submit {
   cursor: pointer;
+  scroll-behavior: auto;
 }
 </style>

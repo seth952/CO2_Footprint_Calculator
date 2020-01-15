@@ -55,7 +55,7 @@ export default {
   background-size: cover;
   padding: 10px;
   background-image: url('http://blog.hostbaby.com/wp-content/uploads/2014/03/Trees_1400x900.png');
-
+  scroll-behavior: auto;
 
 }
 
