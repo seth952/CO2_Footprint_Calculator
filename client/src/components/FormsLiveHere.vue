@@ -101,7 +101,7 @@ export default {
       plane: ((this.plane * this.emissions[0].travel.plane)/ 365),
       electricity: ((this.electricity * this.emissions[0].energy.electricity)/ 365),
       gas: ((this.gas * this.emissions[0].energy.gas)/ 365),
-      hybrid: ((this.hybrid * this.emissions[0].energy.hybrid)),
+      hybrid: ((this.hybrid * this.emissions[0].energy.hybrid) / 365),
       meat: ((this.meat * this.emissions[0].diet.meat)),
       veg: ((this.veg * this.emissions[0].diet.veg)),
       travelTotal: this.travelTotal,
