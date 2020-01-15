@@ -78,8 +78,6 @@ p{
 }
 .pic{
   padding-top: 120px;
-
-
 }
 
 

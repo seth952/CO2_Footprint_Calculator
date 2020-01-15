@@ -25,7 +25,7 @@ export default {
       }, 0)
     }
   eventBus.$emit('energy-calculated', sumEnergy(energyArray))
-  return sumEnergy(energyArray)
+  return sumEnergy(energyArray).toPrecision(2)
     }
   }
 }

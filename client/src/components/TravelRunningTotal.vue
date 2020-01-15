@@ -26,7 +26,7 @@ computed: {
     }, 0)
   }
   eventBus.$emit('travel-calculated', sumTravel(travelArray))
-  return sumTravel(travelArray)
+  return sumTravel(travelArray).toPrecision(3)
 }
 
 }

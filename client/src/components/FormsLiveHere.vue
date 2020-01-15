@@ -33,12 +33,13 @@
         <h3 @mouseover="hoverdiet = true" @mouseleave="hoverdiet = false"><u>Diet</u></h3>
           <li v-if="hoverdiet">Average user daily meat eaten: 0.25</li>
           <li v-if="hoverdiet">Average user daily veg eaten: 0.8</li>
-          <p>Enter kg eaten in:</p>
+          <p>Enter kcal eaten in:</p>
           <label for="meat">Meat:</label>
           <input type="number" name="meat" @input="handleRunningDiet" v-model="meat">
           <br>
           <label for="veg">Veg:</label>
           <input type="number" name="veg" @input="handleRunningDiet" v-model="veg">
+      <br>
       <br>
       <br>
       <button class="submit" type="submit" alt="Submit"><img src="https://images.vexels.com/media/users/3/151082/isolated/preview/56bd227524ed2184915800eb5a586a2d-left-foot-footprint-silhouette-by-vexels.png" width="60px"height="70px"></button>

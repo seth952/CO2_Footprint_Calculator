@@ -1,10 +1,10 @@
 <template>
   <div class="dropdown">
-    <label for="api-thing">Choose Date: </label>
+    <label for="api-thing"><b>Choose a previous date: </b></label>
     <select class="dropdown" @change="handleChange" id="api-thing"v-model="selectedDate">
       <option disabled selected value> -- select an option -- </option>
       <option v-for="(foot, index) of footprints" :key="index" :value="foot">
-        Previous Entry: {{foot.date}}
+        Footprint for {{foot.date}}
       </option>
 
     </select>

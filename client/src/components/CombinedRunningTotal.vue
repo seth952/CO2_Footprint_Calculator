@@ -42,7 +42,7 @@ export default {
     combinedTotal(){
       let resultCombined = this.dietTotal + this.energyTotal + this.travelTotal
       eventBus.$emit('combined-calculated', resultCombined)
-      return resultCombined
+      return resultCombined.toPrecision(5)
     }
   }
 }

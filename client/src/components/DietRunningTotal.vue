@@ -24,7 +24,7 @@ export default {
         }, 0)
       }
     eventBus.$emit('diet-calculated', sumDiet(dietArray))
-    return sumDiet(dietArray)
+    return sumDiet(dietArray).toPrecision(2)
     }
   }
 }
