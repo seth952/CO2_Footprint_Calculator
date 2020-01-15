@@ -9,8 +9,9 @@
     <br>
   <div class="form-running">
     <forms-live-here/>
-    <footprint-running-total/>
     <result/>
+    <footprint-running-total/>
+
   </div>
   </div>
 </template>

@@ -73,7 +73,6 @@ export default {
 .running-total-container {
   width: auto;
   height: 10%;
-	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.7);
 	padding: 20px;
 	margin-bottom: 40px;

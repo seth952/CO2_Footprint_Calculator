@@ -16,7 +16,7 @@
     <p>Meat:{{breakdown.meat}}kg CO2e/day</p>
     <p>Veg{{breakdown.veg}}kg CO2e/day</p>
     <p>Total: {{breakdown.dietTotal}}kg CO2e/day</p>
-    
+
 
 
 
@@ -41,6 +41,6 @@ export default {
 <style lang="css" scoped>
 .break{
   background-color: white;
-
+  margin: 25px;
 }
 </style>
