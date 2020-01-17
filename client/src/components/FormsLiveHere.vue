@@ -143,9 +143,6 @@ export default {
         }
       eventBus.$emit('running-total-diet', runningFootprint)
   },
-
-
-
 }
 }
 </script>
