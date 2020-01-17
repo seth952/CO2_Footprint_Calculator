@@ -13,6 +13,8 @@
     <footprint-running-total/>
 
   </div>
+  <hr>
+  <p>SoggyBottomBoys/Apps&#169;</p>
   </div>
 </template>
 <script>

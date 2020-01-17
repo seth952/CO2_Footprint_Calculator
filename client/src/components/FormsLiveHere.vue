@@ -2,7 +2,7 @@
   <div>
     <form class="forms" action="index.html" method="post" v-on:submit="handleSubmit">
         <h3 for="Date"><u>Date:</u></h3>
-        <input type="date" name="date" v-model="date">
+        <input type="date" name="date" v-model="date" required>
         <h4>Hover over categories for more information.</h4>
         <h3 @mouseover="hovertravel = true" @mouseleave="hovertravel = false"><u>Travel</u></h3>
           <li v-if="hovertravel">Average user daily car miles: 20</li>
@@ -42,7 +42,7 @@
       <br>
 
       <br>
-      <button class="submit" type="submit" alt="Submit"><img src="https://images.vexels.com/media/users/3/151082/isolated/preview/56bd227524ed2184915800eb5a586a2d-left-foot-footprint-silhouette-by-vexels.png" width="60px"height="70px"></button>
+      <button class="submit" type="submit" alt="Submit"><img src="https://images.vexels.com/media/users/3/151082/isolated/preview/56bd227524ed2184915800eb5a586a2d-left-foot-footprint-silhouette-by-vexels.png" width="60px"height="60px"></button>
       <br>
       <label for="button">Submit</label>
 
