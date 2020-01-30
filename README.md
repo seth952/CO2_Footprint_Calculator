@@ -1,4 +1,7 @@
 CO2 Footprint Calculator
+
+http://co2byyou.com/ 
+
 A full stack web app that allows a user to input various aspects of their lifestyle and check their CO2 footprint.
 
 The app stores the form data into a database and then displays the data using HighChartsJS with a detailed breakdown of the emissions measured in kgCO2e/day. As the user enters information into the form, a running total updates in real time showing the effect of their lifestyle. A user can also view previous footprints using the stored data in the database.
